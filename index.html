@@ -24,6 +24,18 @@
       padding: 20px;
     }
 
+    /* Full-width row image with no scaling */
+    .hero-image {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto; /* maintains true proportion */
+    }
+
     .profile-card {
       background-color: white;
       padding: 20px;
@@ -31,11 +43,6 @@
       display: flex;
       gap: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .profile-card img {
-      width: 200px;
-      border-radius: 10px;
     }
 
     .section {
@@ -66,8 +73,12 @@
 
   <div class="container">
 
+    <!-- Full Width Image Row -->
+    <div class="hero-image">
+      <img src="https://media.licdn.com/dms/image/v2/D5616AQEAVJhTSqCPUA/profile-displaybackgroundimage-shrink_350_1400/B56Zhq_YDpG0Ag-/0/1754141656187?e=1761177600&amp;v=beta&amp;t=nFW8ciRvoQt45Dfecq1qpyF5oJxykoOGfuG15tuNOAE" alt="Profile Banner">
+    </div>
+
     <div class="profile-card">
-      <img src="https://media.licdn.com/dms/image/v2/D5616AQEAVJhTSqCPUA/profile-displaybackgroundimage-shrink_350_1400/B56Zhq_YDpG0Ag-/0/1754141656187?e=1761177600&amp;v=beta&amp;t=nFW8ciRvoQt45Dfecq1qpyF5oJxykoOGfuG15tuNOAE" alt="Profile Image">
       <div>
         <h2>About Me</h2>
         <p><strong>Do you know?</strong>  
