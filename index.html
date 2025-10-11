@@ -5,28 +5,80 @@
   <title>Nishan | Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: Arial, sans-serif;
       background-color: #f4f6f8;
       color: #333;
     }
 
-    /* Full-width banner image */
-    .banner {
-      width: 100%;
-      text-align: center;
+    /* Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px; /* hidden by default */
+      background-color: #0A66C2;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 1000;
     }
 
+    .sidebar a {
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #fff;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: #074a9d;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1100;
+      color: #0A66C2;
+    }
+
+    /* Overlay for mobile */
+    .overlay {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.4);
+      display: none;
+      z-index: 900;
+    }
+
+    /* Content */
+    .content {
+      margin-left: 0;
+      transition: margin-left 0.3s;
+      padding: 20px;
+    }
+
+    /* Banner */
     .banner img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    /* Profile + Tagline section */
+    /* Profile + Tagline */
     .profile-section {
       max-width: 900px;
-      margin: -40px auto 0 auto; /* pulls section slightly up from banner */
+      margin: 20px auto;
       display: flex;
       align-items: center;
       gap: 20px;
@@ -70,10 +122,6 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
     .links a {
       display: inline-block;
       margin-right: 10px;
@@ -100,49 +148,101 @@
 </head>
 <body>
 
-  <!-- Banner -->
-  <div class="banner">
-    <img src="https://media.licdn.com/dms/image/v2/D5616AQEAVJhTSqCPUA/profile-displaybackgroundimage-shrink_350_1400/B56Zhq_YDpG0Ag-/0/1754141656187?e=1761177600&amp;v=beta&amp;t=nFW8ciRvoQt45Dfecq1qpyF5oJxykoOGfuG15tuNOAE" alt="Banner Image">
+  <!-- Hamburger -->
+  <span class="hamburger" onclick="toggleSidebar()">&#9776;</span>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="#projects">Projects</a>
+    <a href="#life">Life so far</a>
+    <a href="#learning">Presently learning</a>
+    <a href="#pipeline">Pipeline Learnings</a>
+    <a href="#art">Art</a>
+    <a href="#testimonials">Friends Testimonials</a>
   </div>
 
-  <!-- Profile + Tagline Section -->
-  <div class="profile-section">
-    <img src="https://avatars.githubusercontent.com/u/105267926?s=400&u=a0134608c6aaeabae5dc97279691306c04d1730e&v=4" alt="Profile Photo">
-    <div class="tagline">
-      <h1>Nishan</h1>
-      <p>Aspiring Data Analyst | Tech Enthusiast | Lifelong Learner</p>
-    </div>
-  </div>
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
 
-  <div class="container">
-    <!-- About / Data Analytics Section -->
-    <div class="section">
-      <h2>About Me</h2>
-      <h4>Sample Body</h4> 
-      <p><strong>Do you know?</strong></br> 
-      The core processes involved in data analytics include:</p>
-      <ul>
-        <li>Asking the Question</li>
-        <li>Getting the Data</li>
-        <li>Investigating the Data</li>
-        <li>Preparing the Data</li>
-        <li>Analyzing the Data</li>
-        <li>Presenting the Results</li>
-      </ul>
-      <h4>End of SAmple Body</h4>
+  <!-- Page Content -->
+  <div class="content">
+    <!-- Banner -->
+    <div class="banner">
+      <img src="https://media.licdn.com/dms/image/v2/D5616AQEAVJhTSqCPUA/profile-displaybackgroundimage-shrink_350_1400/B56Zhq_YDpG0Ag-/0/1754141656187?e=1761177600&amp;v=beta&amp;t=nFW8ciRvoQt45Dfecq1qpyF5oJxykoOGfuG15tuNOAE" alt="Banner Image">
     </div>
 
-    <!-- Contact Links -->
-    <div class="section">
-      <h3>Connect With Me</h3>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/007cn/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/007nishan" target="_blank">GitHub</a>
-        <a href="https://orcid.org/0009-0007-8012-0182" target="_blank">ORCiD</a>
-        <a href="https://x.com/NishanXX7" target="_blank">X (Twitter)</a>
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <img src="https://avatars.githubusercontent.com/u/105267926?s=400&u=a0134608c6aaeabae5dc97279691306c04d1730e&v=4" alt="Profile Photo">
+      <div class="tagline">
+        <h1>Nishan</h1>
+        <p>Aspiring Data Analyst | Tech Enthusiast | Lifelong Learner</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- About Section -->
+      <div id="projects" class="section">
+        <h2>Projects</h2>
+        <p>Details about projects go here...</p>
+      </div>
+
+      <div id="life" class="section">
+        <h2>Life so far</h2>
+        <p>Details about life so far...</p>
+      </div>
+
+      <div id="learning" class="section">
+        <h2>Presently learning</h2>
+        <p>Details about current learning...</p>
+      </div>
+
+      <div id="pipeline" class="section">
+        <h2>Pipeline Learnings</h2>
+        <p>Details about pipeline learnings...</p>
+      </div>
+
+      <div id="art" class="section">
+        <h2>Art</h2>
+        <p>Details about art projects or interests...</p>
+      </div>
+
+      <div id="testimonials" class="section">
+        <h2>Friends Testimonials</h2>
+        <p>Testimonials from friends...</p>
+      </div>
+
+      <!-- Contact Links -->
+      <div class="section">
+        <h3>Connect With Me</h3>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/007cn/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/007nishan" target="_blank">GitHub</a>
+          <a href="https://orcid.org/0009-0007-8012-0182" target="_blank">ORCiD</a>
+          <a href="https://x.com/NishanXX7" target="_blank">X (Twitter)</a>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('mySidebar');
+      const overlay = document.getElementById('overlay');
+      if (sidebar.style.left === '0px') {
+        sidebar.style.left = '-250px';
+        overlay.style.display = 'none';
+      } else {
+        sidebar.style.left = '0px';
+        overlay.style.display = 'block';
+      }
+    }
+
+    function closeSidebar() {
+      document.getElementById('mySidebar').style.left = '-250px';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
