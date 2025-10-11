@@ -11,38 +11,55 @@
       color: #333;
     }
 
-    .header {
-      background-color: #0A66C2;
-      color: white;
-      padding: 30px;
+    /* Full-width banner image */
+    .banner {
+      width: 100%;
       text-align: center;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Profile + Tagline section */
+    .profile-section {
+      max-width: 900px;
+      margin: -40px auto 0 auto; /* pulls section slightly up from banner */
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .profile-section img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #0A66C2;
+      object-fit: cover;
+    }
+
+    .tagline h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #0A66C2;
+    }
+
+    .tagline p {
+      margin: 5px 0 0 0;
+      font-size: 16px;
+      color: #555;
     }
 
     .container {
       max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-
-    /* Full-width row image with no scaling */
-    .hero-image {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .hero-image img {
-      max-width: 100%;
-      height: auto; /* maintains true proportion */
-    }
-
-    .profile-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      display: flex;
-      gap: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 20px auto;
+      padding: 0 20px;
     }
 
     .section {
@@ -53,47 +70,66 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
+    ul {
+      padding-left: 20px;
+    }
+
     .links a {
       display: inline-block;
       margin-right: 10px;
+      margin-top: 10px;
       text-decoration: none;
       padding: 8px 12px;
       border-radius: 5px;
       background-color: #0A66C2;
       color: white;
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-section img {
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>Nishan</h1>
-    <p>Aspiring Data Analyst | Tech Enthusiast | Lifelong Learner</p>
+  <!-- Banner -->
+  <div class="banner">
+    <img src="https://media.licdn.com/dms/image/v2/D5616AQEAVJhTSqCPUA/profile-displaybackgroundimage-shrink_350_1400/B56Zhq_YDpG0Ag-/0/1754141656187?e=1761177600&amp;v=beta&amp;t=nFW8ciRvoQt45Dfecq1qpyF5oJxykoOGfuG15tuNOAE" alt="Banner Image">
+  </div>
+
+  <!-- Profile + Tagline Section -->
+  <div class="profile-section">
+    <img src="https://avatars.githubusercontent.com/u/105267926?s=400&u=a0134608c6aaeabae5dc97279691306c04d1730e&v=4" alt="Profile Photo">
+    <div class="tagline">
+      <h1>Nishan</h1>
+      <p>Aspiring Data Analyst | Tech Enthusiast | Lifelong Learner</p>
+    </div>
   </div>
 
   <div class="container">
-
-    <!-- Full Width Image Row -->
-    <div class="hero-image">
-      <img src="https://media.licdn.com/dms/image/v2/D5616AQEAVJhTSqCPUA/profile-displaybackgroundimage-shrink_350_1400/B56Zhq_YDpG0Ag-/0/1754141656187?e=1761177600&amp;v=beta&amp;t=nFW8ciRvoQt45Dfecq1qpyF5oJxykoOGfuG15tuNOAE" alt="Profile Banner">
+    <!-- About / Data Analytics Section -->
+    <div class="section">
+      <h2>About Me</h2>
+      <p><strong>Do you know?</strong> The core processes involved in data analytics include:</p>
+      <ul>
+        <li>Asking the Question</li>
+        <li>Getting the Data</li>
+        <li>Investigating the Data</li>
+        <li>Preparing the Data</li>
+        <li>Analyzing the Data</li>
+        <li>Presenting the Results</li>
+      </ul>
     </div>
 
-    <div class="profile-card">
-      <div>
-        <h2>About Me</h2>
-        <p><strong>Do you know?</strong>  
-          The core processes involved in data analytics include:</p>
-        <ul>
-          <li>Asking the Question</li>
-          <li>Getting the Data</li>
-          <li>Investigating the Data</li>
-          <li>Preparing the Data</li>
-          <li>Analyzing the Data</li>
-          <li>Presenting the Results</li>
-        </ul>
-      </div>
-    </div>
-
+    <!-- Contact Links -->
     <div class="section">
       <h3>Connect With Me</h3>
       <div class="links">
@@ -103,7 +139,6 @@
         <a href="https://x.com/NishanXX7" target="_blank">X (Twitter)</a>
       </div>
     </div>
-
   </div>
 
 </body>
