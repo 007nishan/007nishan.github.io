@@ -9,96 +9,29 @@
       font-family: Arial, sans-serif;
       background-color: #f4f6f8;
       color: #333;
-    }
-
-    /* Hamburger button */
-    .hamburger {
-      font-size: 30px;
-      cursor: pointer;
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      z-index: 1100;
-      color: #0A66C2;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      height: 100%;
-      width: 250px;
-      position: fixed;
-      top: 0;
-      left: -250px;
-      background-color: #0A66C2;
-      overflow-x: hidden;
-      transition: 0.3s;
-      padding-top: 60px;
-      z-index: 1000;
-    }
-
-    .sidebar a {
-      padding: 12px 20px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #fff;
-      display: block;
-      transition: 0.2s;
-    }
-
-    .sidebar a:hover {
-      background-color: #074a9d;
-    }
-
-    /* Overlay */
-    .overlay {
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background-color: rgba(0,0,0,0.4);
-      display: none;
-      z-index: 900;
-    }
-
-    /* Main content */
-    .content {
-      margin-left: 0;
-      transition: margin-left 0.3s;
-      padding: 20px;
-    }
-
-    /* Banner */
-    .banner img {
-      width: 100%;
-      height: auto;
-      display: block;
+      text-align: center;
     }
 
     /* Profile section */
     .profile-section {
       max-width: 900px;
-      margin: 20px auto;
+      margin: 40px auto 20px auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
       gap: 20px;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .profile-section img {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      border: 3px solid #0A66C2;
       object-fit: cover;
     }
 
     .tagline h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 28px;
       color: #0A66C2;
     }
 
@@ -108,10 +41,35 @@
       color: #555;
     }
 
+    /* Navigation buttons */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      background-color: #0A66C2;
+      color: white;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #074a9d;
+    }
+
+    /* About Me Section */
     .container {
       max-width: 900px;
       margin: 20px auto;
       padding: 0 20px;
+      text-align: left;
     }
 
     .section {
@@ -138,7 +96,7 @@
       color: #333;
       font-weight: bold;
       width: 220px;
-      margin-left: auto; /* ensures right alignment */
+      margin-left: auto; 
       box-shadow: 0 1px 3px rgba(0,0,0,0.2);
       transition: 0.2s;
     }
@@ -154,30 +112,28 @@
     }
 
     @media (max-width: 700px) {
-      .profile-section {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .profile-section img {
-        margin-bottom: 10px;
-      }
-
       .connect a {
         margin-left: 0;
         justify-content: center;
       }
     }
+
   </style>
 </head>
 <body>
 
-  <!-- Hamburger -->
-  <span class="hamburger" onclick="toggleSidebar()">&#9776;</span>
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQGGQoxktXYuYw/profile-displayphoto-crop_800_800/B56ZlL5wmBKIAI-/0/1757915058250?e=1762992000&v=beta&t=S943Is0fJbCi7aYP0Jfd0_egNYLt6DGSEU65VVvGDI0" alt="Profile Photo">
+    <div class="tagline">
+      <h1>Nishan</h1>
+      <p>Amazonian | Ex-Teaching Assistant - Joy of Computing using Python (NPTEL) | Data Science Student | Mechanical Engineer</p>
+    </div>
+  </div>
 
-  <!-- Sidebar -->
-  <div id="mySidebar" class="sidebar">
-    <a href="home.html" target="_self">Home</a>
+  <!-- Navigation Buttons -->
+  <div class="nav-buttons">
+    <a href="home.html">Home</a>
     <a href="projects.html" target="_blank">Projects</a>
     <a href="life.html" target="_blank">Life so far</a>
     <a href="learning.html" target="_blank">Presently learning</a>
@@ -186,80 +142,41 @@
     <a href="testimonials.html" target="_blank">Friends Testimonials</a>
   </div>
 
-  <!-- Overlay -->
-  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
-
-  <!-- Main Content -->
-  <div class="content">
-    <!-- Banner -->
-    <div class="banner">
-      <img src="https://media.licdn.com/dms/image/v2/D5616AQEAVJhTSqCPUA/profile-displaybackgroundimage-shrink_350_1400/B56Zhq_YDpG0Ag-/0/1754141656187?e=1761177600&amp;v=beta&amp;t=nFW8ciRvoQt45Dfecq1qpyF5oJxykoOGfuG15tuNOAE" alt="Banner Image">
+  <!-- About Me Section -->
+  <div class="container">
+    <div class="section">
+      <h2>About Me</h2>
+      <h4>Sample Body</h4>
+      <p><strong>Do you know?</strong><br>
+      The core processes involved in data analytics include:</p>
+      <ul>
+        <li>Asking the Question</li>
+        <li>Getting the Data</li>
+        <li>Investigating the Data</li>
+        <li>Preparing the Data</li>
+        <li>Analyzing the Data</li>
+        <li>Presenting the Results</li>
+      </ul>
+      <h4>End of Sample Body</h4>
     </div>
 
-    <!-- Profile Section -->
-    <div class="profile-section">
-      <img src="https://avatars.githubusercontent.com/u/105267926?s=400&u=a0134608c6aaeabae5dc97279691306c04d1730e&v=4" alt="Profile Photo">
-      <div class="tagline">
-        <h1>Nishan</h1>
-        <p>Aspiring Data Analyst | Tech Enthusiast | Lifelong Learner</p>
-      </div>
-    </div>
-
-    <!-- About Me Section -->
-    <div class="container">
-      <div class="section">
-        <h2>About Me</h2>
-        <h4>Sample Body</h4>
-        <p><strong>Do you know?</strong><br>
-        The core processes involved in data analytics include:</p>
-        <ul>
-          <li>Asking the Question</li>
-          <li>Getting the Data</li>
-          <li>Investigating the Data</li>
-          <li>Preparing the Data</li>
-          <li>Analyzing the Data</li>
-          <li>Presenting the Results</li>
-        </ul>
-        <h4>End of Sample Body</h4>
-      </div>
-
-      <!-- Connect With Me Section -->
-      <div class="section connect">
-        <h3>Connect With Me</h3>
-        <a href="https://www.linkedin.com/in/007cn/" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn Logo"> LinkedIn
-        </a>
-        <a href="https://github.com/007nishan" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub Logo"> GitHub
-        </a>
-        <a href="https://orcid.org/0009-0007-8012-0182" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCiD Logo"> ORCiD
-        </a>
-        <a href="https://x.com/NishanXX7" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X Logo"> X (Twitter)
-        </a>
-      </div>
+    <!-- Connect With Me Section -->
+    <div class="section connect">
+      <h3>Connect With Me</h3>
+      <a href="https://www.linkedin.com/in/007cn/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn Logo"> LinkedIn
+      </a>
+      <a href="https://github.com/007nishan" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub Logo"> GitHub
+      </a>
+      <a href="https://orcid.org/0009-0007-8012-0182" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCiD Logo"> ORCiD
+      </a>
+      <a href="https://x.com/NishanXX7" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X Logo"> X (Twitter)
+      </a>
     </div>
   </div>
-
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('mySidebar');
-      const overlay = document.getElementById('overlay');
-      if (sidebar.style.left === '0px') {
-        sidebar.style.left = '-250px';
-        overlay.style.display = 'none';
-      } else {
-        sidebar.style.left = '0px';
-        overlay.style.display = 'block';
-      }
-    }
-
-    function closeSidebar() {
-      document.getElementById('mySidebar').style.left = '-250px';
-      document.getElementById('overlay').style.display = 'none';
-    }
-  </script>
 
 </body>
 </html>
