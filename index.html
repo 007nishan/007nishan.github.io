@@ -4,12 +4,9 @@
   <meta charset="UTF-8">
   <title>Nishan | Home</title>
   <style>
-    /* Brand Kit Variables */
     :root {
       --brand-color: #0A66C2;
       --brand-font: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      --button-bg: #0A66C2;
-      --button-hover: #074a9d;
       --text-color: #ffffff;
       --background-color: #f4f6f8;
     }
@@ -21,8 +18,8 @@
       color: #333;
     }
 
-    /* Left Vertical Panel */
-    .left-panel {
+    /* Left Vertical Navigation */
+    .nav-left {
       position: fixed;
       left: 20px;
       top: 50%;
@@ -33,23 +30,53 @@
       z-index: 1000;
     }
 
-    .left-panel a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .nav-left a {
       text-decoration: none;
       padding: 10px 16px;
-      border-radius: 6px;
-      background-color: var(--button-bg);
+      background-color: var(--brand-color);
       color: var(--text-color);
       font-weight: bold;
-      transition: 0.2s;
-      min-width: 180px;
+      border-radius: 0;
       text-align: center;
+      transition: 0.2s;
     }
 
-    .left-panel a:hover {
-      background-color: var(--button-hover);
+    .nav-left a:hover {
+      background-color: #074a9d;
+    }
+
+    /* Right Vertical Connect With Me */
+    .connect-right {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .connect-right a {
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      text-decoration: none;
+      background-color: var(--brand-color);
+      color: var(--text-color);
+      font-weight: bold;
+      border-radius: 0;
+      transition: 0.2s;
+    }
+
+    .connect-right a img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    .connect-right a:hover {
+      background-color: #074a9d;
     }
 
     /* Profile Section */
@@ -82,7 +109,7 @@
       color: #555;
     }
 
-    /* About Me Section */
+    /* Content Area */
     .container {
       max-width: 900px;
       margin: 20px auto;
@@ -98,54 +125,47 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    /* Icons for Connect links */
-    .left-panel a img {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-    }
-
-    @media (max-width: 800px) {
-      .left-panel {
+    @media (max-width: 900px) {
+      .nav-left, .connect-right {
         position: static;
         transform: none;
         flex-direction: row;
         justify-content: center;
-        flex-wrap: wrap;
-        margin: 20px 0;
+        margin: 10px 0;
       }
 
-      .left-panel a {
-        margin: 5px;
+      .nav-left a, .connect-right a {
+        margin: 0 5px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Left Vertical Panel with Navigation & Connect Links -->
-  <div class="left-panel">
-    <!-- Navigation Buttons -->
+  <!-- Left Navigation -->
+  <div class="nav-left">
     <a href="home.html">Home</a>
-    <a href="projects.html" target="_blank">Projects</a>
-    <a href="life.html" target="_blank">Life so far</a>
-    <a href="learning.html" target="_blank">Presently learning</a>
-    <a href="pipeline.html" target="_blank">Pipeline Learnings</a>
-    <a href="art.html" target="_blank">Art</a>
-    <a href="testimonials.html" target="_blank">Friends Testimonials</a>
+    <a href="projects.html">Projects</a>
+    <a href="life.html">Life so far</a>
+    <a href="learning.html">Presently learning</a>
+    <a href="pipeline.html">Pipeline Learnings</a>
+    <a href="art.html">Art</a>
+    <a href="testimonials.html">Friends Testimonials</a>
+  </div>
 
-    <!-- Connect With Me Buttons -->
-    <a href="https://www.linkedin.com/in/007cn/" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn Logo"> LinkedIn
+  <!-- Right Connect With Me -->
+  <div class="connect-right">
+    <a href="https://www.linkedin.com/in/007cn/">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"> LinkedIn
     </a>
-    <a href="https://github.com/007nishan" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub Logo"> GitHub
+    <a href="https://github.com/007nishan">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"> GitHub
     </a>
-    <a href="https://orcid.org/0009-0007-8012-0182" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCiD Logo"> ORCiD
+    <a href="https://orcid.org/0009-0007-8012-0182">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCiD"> ORCiD
     </a>
-    <a href="https://x.com/NishanXX7" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X Logo"> X (Twitter)
+    <a href="https://x.com/NishanXX7">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"> X (Twitter)
     </a>
   </div>
 
