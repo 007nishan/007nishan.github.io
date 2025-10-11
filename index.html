@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nishan | Portfolio</title>
+  <title>Nishan | Home</title>
   <style>
     body {
       margin: 0;
@@ -28,7 +28,7 @@
       width: 250px;
       position: fixed;
       top: 0;
-      left: -250px; /* hidden initially */
+      left: -250px;
       background-color: #0A66C2;
       overflow-x: hidden;
       transition: 0.3s;
@@ -49,7 +49,7 @@
       background-color: #074a9d;
     }
 
-    /* Overlay for mobile */
+    /* Overlay */
     .overlay {
       position: fixed;
       height: 100%;
@@ -108,6 +108,38 @@
       color: #555;
     }
 
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Connect section - right aligned & vertical links */
+    .connect {
+      text-align: right;
+    }
+
+    .connect a {
+      display: block;
+      text-decoration: none;
+      padding: 8px 12px;
+      margin: 5px 0;
+      border-radius: 5px;
+      background-color: #0A66C2;
+      color: white;
+      font-weight: bold;
+      width: 180px;
+      margin-left: auto; /* ensures right alignment */
+    }
+
     @media (max-width: 700px) {
       .profile-section {
         flex-direction: column;
@@ -116,6 +148,11 @@
 
       .profile-section img {
         margin-bottom: 10px;
+      }
+
+      .connect a {
+        margin-left: 0;
+        text-align: center;
       }
     }
   </style>
@@ -127,6 +164,7 @@
 
   <!-- Sidebar -->
   <div id="mySidebar" class="sidebar">
+    <a href="home.html" target="_self">Home</a>
     <a href="projects.html" target="_blank">Projects</a>
     <a href="life.html" target="_blank">Life so far</a>
     <a href="learning.html" target="_blank">Presently learning</a>
@@ -151,6 +189,34 @@
       <div class="tagline">
         <h1>Nishan</h1>
         <p>Aspiring Data Analyst | Tech Enthusiast | Lifelong Learner</p>
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="container">
+      <div class="section">
+        <h2>About Me</h2>
+        <h4>Sample Body</h4>
+        <p><strong>Do you know?</strong><br>
+        The core processes involved in data analytics include:</p>
+        <ul>
+          <li>Asking the Question</li>
+          <li>Getting the Data</li>
+          <li>Investigating the Data</li>
+          <li>Preparing the Data</li>
+          <li>Analyzing the Data</li>
+          <li>Presenting the Results</li>
+        </ul>
+        <h4>End of Sample Body</h4>
+      </div>
+
+      <!-- Connect With Me Section -->
+      <div class="section connect">
+        <h3>Connect With Me</h3>
+        <a href="https://www.linkedin.com/in/007cn/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/007nishan" target="_blank">GitHub</a>
+        <a href="https://orcid.org/0009-0007-8012-0182" target="_blank">ORCiD</a>
+        <a href="https://x.com/NishanXX7" target="_blank">X (Twitter)</a>
       </div>
     </div>
   </div>
