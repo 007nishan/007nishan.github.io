@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Site Title</title>
-  <!-- Import Google Fonts for reference-matched styles -->
+  <title>Nishan | Data Science Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -28,14 +27,6 @@
       color: var(--accent-color);
     }
 
-    /* Section background example */
-    .section, .container {
-      background-color: var(--section-bg);
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    /* Example for navigation, update as needed */
     .nav-top {
       display: flex;
       justify-content: center;
@@ -62,9 +53,165 @@
     .nav-top a:hover {
       background-color: #1e3a21;
     }
-    /* You can copy reference styles for other elements as required */
 
-    /* Responsive design for mobile, as in reference */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      padding: 10px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      text-decoration: none;
+      background-color: var(--accent-color);
+      color: #FFFFFF;
+      font-weight: 400;
+      border-radius: 25px;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .social-links a img {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      filter: brightness(0) invert(1);
+    }
+
+    .social-links a:hover {
+      background-color: #1e3a21;
+    }
+
+    .profile-section {
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .profile-section img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .tagline h1 {
+      margin: 0;
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .tagline p {
+      margin: 10px 0 0 0;
+      font-size: 18px;
+      color: var(--text-light);
+      font-weight: 300;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background-color: var(--section-bg);
+      padding: 30px;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .about-section {
+      padding: 40px 30px;
+      background-color: var(--section-bg);
+      border-radius: 10px;
+      margin: 40px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .about-header {
+      margin-bottom: 30px;
+    }
+
+    .about-header h4 {
+      font-size: 28px;
+      margin: 0 0 20px 0;
+      font-weight: 700;
+    }
+
+    .images-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .about-image {
+      width: 250px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .about-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .about-content {
+      max-width: 800px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+
+    .about-content strong {
+      color: var(--accent-color);
+    }
+
+    .about-content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .about-content ul li {
+      padding: 8px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .about-content ul li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
     @media (max-width: 900px) {
       .nav-top {
         flex-wrap: wrap;
@@ -76,27 +223,108 @@
         font-size: 13px;
       }
 
-      .container {
-        padding: 0 10px;
+      .social-links {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .profile-section {
+        margin: 20px auto;
+      }
+
+      .profile-section img {
+        width: 140px;
+        height: 140px;
+      }
+
+      .tagline h1 {
+        font-size: 32px;
+      }
+
+      .images-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .about-image {
+        width: 100%;
+        max-width: 300px;
+        height: 250px;
+      }
+
+      .about-section {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Put your HTML content here, using .container and .section for backgrounds as shown in the reference -->
 
+  <!-- Top Navigation -->
   <div class="nav-top">
-    <a href="#">Home</a>
-    <a href="#">Projects</a>
-    <a href="#">About</a>
-    <!-- Add other nav items here -->
+    <a href="home.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="life.html">Life so far</a>
+    <a href="learning.html">Presently learning</a>
+    <a href="pipeline.html">Pipeline Learnings</a>
+    <a href="art.html">Art</a>
+    <a href="testimonials.html">Friends Testimonials</a>
   </div>
 
-  <div class="container section" style="margin:40px auto; max-width:900px; padding:30px;">
-    <h1>Welcome to My Site</h1>
-    <p>This is your content area. All text uses the correct font and background color.</p>
-    <h2>Section Heading</h2>
-    <p>More introduction or description here.</p>
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQGGQoxktXYuYw/profile-displayphoto-crop_800_800/B56ZlL5wmBKIAI-/0/1757915058250?e=1762992000&v=beta&t=S943Is0fJbCi7aYP0Jfd0_egNYLt6DGSEU65VVvGDI0" alt="Profile Photo">
+    <div class="tagline">
+      <h1>Nishan</h1>
+      <p>Amazonian | Ex-Teaching Assistant - Joy of Computing using Python (NPTEL) | Data Science Student | Mechanical Engineer</p>
+    </div>
+  </div>
+
+  <!-- Social Links Section -->
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/007cn/">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"> LinkedIn
+    </a>
+    <a href="https://github.com/007nishan">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"> GitHub
+    </a>
+    <a href="https://orcid.org/0009-0007-8012-0182">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCiD"> ORCiD
+    </a>
+    <a href="https://x.com/NishanXX7">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"> X (Twitter)
+    </a>
+  </div>
+
+  <!-- About Me Section with Multiple Images -->
+  <div class="about-section">
+    <div class="about-header">
+      <h4>More About Me</h4>
+    </div>
+    
+    <div class="images-row">
+      <img src="https://media.licdn.com/dms/image/v2/D5603AQGGQoxktXYuYw/profile-displayphoto-crop_800_800/B56ZlL5wmBKIAI-/0/1757915058250?e=1762992000&v=beta&t=S943Is0fJbCi7aYP0Jfd0_egNYLt6DGSEU65VVvGDI0" alt="Nishan Professional Photo" class="about-image">
+    </div>
+    
+    <div class="about-content">
+      <p>I am passionate about solving challenging problems through data science, creating impactful products, and mentoring aspiring data professionals. As a Data Science student and former Teaching Assistant for Joy of Computing using Python (NPTEL), I have developed a strong foundation in data analytics and programming.</p>
+      
+      <p>With a background in Mechanical Engineering and current role at Amazon, I bring a unique perspective to tackling complex data challenges. My experience spans from academic research to industry applications.</p>
+      
+      <p><strong>Do you know?</strong><br>
+      The core processes involved in data analytics include:</p>
+      <ul>
+        <li>Asking the Question</li>
+        <li>Getting the Data</li>
+        <li>Investigating the Data</li>
+        <li>Preparing the Data</li>
+        <li>Analyzing the Data</li>
+        <li>Presenting the Results</li>
+      </ul>
+      
+      <p>Outside of data science, I enjoy exploring new technologies and sharing knowledge with the community through teaching and open-source contributions.</p>
+    </div>
   </div>
 
 </body>
