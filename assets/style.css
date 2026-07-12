@@ -91,8 +91,16 @@ code, pre, .diagram { font-family: var(--font-family-mono); }
   border: 1px solid var(--color-primary-black);
 }
 .tagline h1 { margin: var(--spacing-sm) 0 0; font-size: 3rem; }
+.tagline h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--color-primary-red);
+  margin: var(--spacing-md) auto 0;
+}
 .tagline p {
-  margin: var(--spacing-sm) 0 0;
+  margin: var(--spacing-md) 0 0;
   font-family: var(--font-family-sans);
   font-size: 1rem;
   font-weight: 400;
@@ -140,9 +148,21 @@ code, pre, .diagram { font-family: var(--font-family-mono); }
 }
 .section h2 {
   font-size: 1.9rem;
-  border-bottom: 2px solid var(--color-primary-black);
-  padding-bottom: var(--spacing-sm);
   margin-top: 0;
+  padding-bottom: var(--spacing-sm);
+  position: relative;
+  border-bottom: 1px solid var(--color-neutral-light);
+}
+/* Lively-but-professional: a short brand-red accent bar under each heading,
+   the editorial signature of the kit (color as decoration, not emoji). */
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 56px;
+  height: 3px;
+  background: var(--color-primary-red);
 }
 .section h3 { font-size: 1.35rem; margin-bottom: var(--spacing-xs); }
 .muted { color: var(--color-neutral-medium); font-family: var(--font-family-sans); font-size: 0.85rem; }

@@ -53,24 +53,27 @@ def build(d):
     L.append("")
     # Absolute URLs so this README renders correctly in BOTH repos
     # (007nishan.github.io AND the 007nishan/007nishan profile repo).
+    # NOTE: no emoji anywhere — brand LOGO badges (above) carry the color;
+    # headings rely on GitHub's native h2 rule + typography. This keeps the
+    # look consistent across all platforms and screen readers (no tofu glyphs).
     cv_pdf = site.rstrip("/") + "/Nishanur_Rahman_CV.pdf"
     L.append('<p align="center">')
-    L.append(f'  <a href="{site}"><strong>🌐 Portfolio &amp; CV</strong></a> ·')
-    L.append(f'  <a href="{cv_pdf}"><strong>📄 Download CV (PDF)</strong></a>')
+    L.append(f'  <a href="{site}"><strong>Portfolio &amp; CV</strong></a> &nbsp;·&nbsp;')
+    L.append(f'  <a href="{cv_pdf}"><strong>Download CV (PDF)</strong></a>')
     L.append("</p>")
     L.append("")
     L.append("---")
     L.append("")
 
     # --- Summary ---
-    L.append("## 👋 About")
+    L.append("## About")
     L.append("")
     L.append(b["summary"])
     L.append("")
 
     # --- Current focus (top role highlights, CV-facing) ---
     current = d["work"][0]
-    L.append(f"## 💼 Currently — {current['position']} @ {current['name']}")
+    L.append(f"## Currently — {current['position']} @ {current['name']}")
     L.append("")
     for hi in current["highlights"][:5]:
         first_sentence = hi["description"].split(". ")[0].rstrip(".") + "."
@@ -78,14 +81,14 @@ def build(d):
     L.append("")
 
     # --- Skills ---
-    L.append("## 🛠️ Skills")
+    L.append("## Skills")
     L.append("")
     for g in d["skills"]:
         L.append(f"- **{g['name']}:** {', '.join(g['keywords'])}")
     L.append("")
 
     # --- Education ---
-    L.append("## 🎓 Education")
+    L.append("## Education")
     L.append("")
     for e in d["education"]:
         when = e.get("x_dateDisplay") or (e.get("endDate") or "")
@@ -94,13 +97,13 @@ def build(d):
     L.append("")
 
     # --- Connect (every link again, plain, so nothing is a dead-end) ---
-    L.append("## 🔗 Connect")
+    L.append("## Connect")
     L.append("")
-    L.append(f"- 🌐 Portfolio & CV: <{site}>")
-    L.append(f"- 📄 Download CV (PDF): <{cv_pdf}>")
+    L.append(f"- **Portfolio & CV:** <{site}>")
+    L.append(f"- **Download CV (PDF):** <{cv_pdf}>")
     for p in profiles:
-        L.append(f"- {p['network']}: <{p['url']}>")
-    L.append(f"- 📧 Email: {b['email']}")
+        L.append(f"- **{p['network']}:** <{p['url']}>")
+    L.append(f"- **Email:** {b['email']}")
     L.append("")
     L.append("---")
     L.append(f"<p align=\"center\"><sub>Last updated {d['meta']['lastModified']} · "
