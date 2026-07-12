@@ -1,8 +1,8 @@
 name: Build portfolio from single source of truth
 
-# Trigger ONLY on source changes. The job writes to OUTPUT paths
-# (root *.html, cv/*.pdf, cv/*.docx, knowledge-graph/*, linkedin.md) which are
-# NOT in this list — so the bot's own commit never re-triggers the workflow.
+# Trigger ONLY on source changes. The PUBLIC site is CV-only: this job publishes
+# nothing but index.html + the CV files. Internal artifacts (linkedin.md,
+# knowledge-graph/, extra pages) are generated but gitignored and never committed.
 on:
   push:
     branches: [main]
@@ -35,7 +35,7 @@ jobs:
       - name: Install Python deps
         run: pip install jinja2 python-docx
 
-      - name: Build all surfaces (site, CV .tex/.docx, KG, LinkedIn blocks)
+      - name: Build all surfaces (site + CV .tex/.docx; internal artifacts stay local)
         run: python build/build.py
 
       - name: Compile CV PDF (LaTeX)
@@ -48,14 +48,17 @@ jobs:
       - name: Publish PDF to site root (downloadable at /Nishanur_Rahman_CV.pdf)
         run: cp cv/Nishanur_Rahman_CV.pdf ./Nishanur_Rahman_CV.pdf
 
-      - name: Commit regenerated artifacts
+      - name: Commit ONLY public CV artifacts (never internal ones)
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
+          # Explicit allowlist — no `git add -A`, so private artifacts
+          # (linkedin.md, knowledge-graph/, extra pages) can never be published.
+          git add index.html Nishanur_Rahman_CV.pdf \
+                  cv/Nishanur_Rahman_CV.tex cv/Nishanur_Rahman_CV.docx cv/Nishanur_Rahman_CV.pdf
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: rebuild site + CV + KG from resume.json [skip ci]"
+            git commit -m "chore: rebuild CV from resume.json [skip ci]"
             git push
           fi

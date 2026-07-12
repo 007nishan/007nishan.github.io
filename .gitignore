@@ -13,3 +13,16 @@ cv/*.synctex.gz
 # OS
 .DS_Store
 Thumbs.db
+
+# Internal-only artifacts — generated locally/CI but NEVER published to the repo.
+# The generators (build/build_linkedin.py, build/build_kg.py) are kept; only
+# their outputs are kept private. The public site is CV-only.
+linkedin.md
+knowledge-graph/
+# Only the public CV page is published; the multi-page site is not.
+projects.html
+life.html
+learning.html
+pipeline.html
+art.html
+testimonials.html
