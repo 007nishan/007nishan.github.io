@@ -33,6 +33,15 @@ def badge(profile):
             f'src="{img}"></a>')
 
 
+def icon_only(network, url, color, logo):
+    """A single clickable, icon-only brand logo (no text label, no visible URL).
+    shields.io for-the-badge, colored so it stays visible on GitHub dark mode.
+    All slugs verified to return HTTP 200."""
+    img = (f"https://img.shields.io/badge/-{color}"
+           f"?style=for-the-badge&logo={logo}&logoColor=white")
+    return f'<a href="{url}" title="{network}"><img alt="{network}" src="{img}" height="34"></a>'
+
+
 def build(d):
     b = d["basics"]
     site = b["url"]
@@ -96,14 +105,23 @@ def build(d):
         L.append(f"- **{e['studyType']} in {e['area']}** — {e['institution']}{score} ({when})")
     L.append("")
 
-    # --- Connect (every link again, plain, so nothing is a dead-end) ---
+    # --- Connect: ONE centered row of clickable, icon-only brand logos.
+    # No platform names, no visible URLs — click any logo to go there.
+    # Includes Portfolio, CV, socials, and Email (mailto) so nothing is lost.
     L.append("## Connect")
     L.append("")
-    L.append(f"- **Portfolio & CV:** <{site}>")
-    L.append(f"- **Download CV (PDF):** <{cv_pdf}>")
+    chips = [
+        icon_only("Portfolio", site, "00719A", "githubpages"),
+        icon_only("Download CV", cv_pdf, "A70E13", "adobeacrobatreader"),
+    ]
     for p in profiles:
-        L.append(f"- **{p['network']}:** <{p['url']}>")
-    L.append(f"- **Email:** {b['email']}")
+        _label, color, logo = BADGE.get(p["network"], (p["network"], "555555", ""))
+        if logo:
+            chips.append(icon_only(p["network"], p["url"], color, logo))
+    chips.append(icon_only("Email", f"mailto:{b['email']}", "333333", "gmail"))
+    L.append('<p align="center">')
+    L.append("  " + "\n  ".join(chips))
+    L.append("</p>")
     L.append("")
     L.append("---")
     L.append(f"<p align=\"center\"><sub>Last updated {d['meta']['lastModified']} · "

@@ -40,13 +40,15 @@ Operations and Data Science professional with 3+ years across AI/ML product deve
 
 ## Connect
 
-- **Portfolio & CV:** <https://007nishan.github.io/>
-- **Download CV (PDF):** <https://007nishan.github.io/Nishanur_Rahman_CV.pdf>
-- **LinkedIn:** <https://www.linkedin.com/in/007cn/>
-- **GitHub:** <https://github.com/007nishan>
-- **ORCID:** <https://orcid.org/0009-0007-8012-0182>
-- **X:** <https://x.com/NishanXX7>
-- **Email:** nishan.rahman@yahoo.com
+<p align="center">
+  <a href="https://007nishan.github.io/" title="Portfolio"><img alt="Portfolio" src="https://img.shields.io/badge/-00719A?style=for-the-badge&logo=githubpages&logoColor=white" height="34"></a>
+  <a href="https://007nishan.github.io/Nishanur_Rahman_CV.pdf" title="Download CV"><img alt="Download CV" src="https://img.shields.io/badge/-A70E13?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" height="34"></a>
+  <a href="https://www.linkedin.com/in/007cn/" title="LinkedIn"><img alt="LinkedIn" src="https://img.shields.io/badge/-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" height="34"></a>
+  <a href="https://github.com/007nishan" title="GitHub"><img alt="GitHub" src="https://img.shields.io/badge/-181717?style=for-the-badge&logo=github&logoColor=white" height="34"></a>
+  <a href="https://orcid.org/0009-0007-8012-0182" title="ORCID"><img alt="ORCID" src="https://img.shields.io/badge/-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" height="34"></a>
+  <a href="https://x.com/NishanXX7" title="X"><img alt="X" src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=x&logoColor=white" height="34"></a>
+  <a href="mailto:nishan.rahman@yahoo.com" title="Email"><img alt="Email" src="https://img.shields.io/badge/-333333?style=for-the-badge&logo=gmail&logoColor=white" height="34"></a>
+</p>
 
 ---
 <p align="center"><sub>Last updated 2026-07-12 · <a href="https://007nishan.github.io/">https://007nishan.github.io/</a></sub></p>
