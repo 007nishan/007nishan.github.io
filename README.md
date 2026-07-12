@@ -38,16 +38,32 @@ Operations and Data Science professional with 3+ years across AI/ML product deve
 - **Bachelor of Science (BS) in Data Science and Applications** — Indian Institute of Technology, Madras (Pursuing)
 - **Bachelor of Technology in Mechanical Engineering** — Sam Higginbottom University of Agriculture, Technology and Sciences (SHUATS) · CGPA: 8.88 (Sep 2016)
 
+## Hackathons
+
+- **[Resolve-It 2.0 — Self-Improving GenAI Andon Cord](https://hack.amazon.com/#lmaqgenai2026/ideas/138436)** — LMAQ GenAI Hackathon 2026 (2026). Conversational RAG assistant with live case context and human-in-the-loop ticketing.
+
+## Certifications & Awards
+
+**Certifications:** Six Sigma Green Belt; Lean Six Sigma White Belt; Agentic AI: Applications from Concept to Code | Coding with Agents | Essential Concepts for Builders; AI Fundamentals; Software Architecture: Foundations; Kiro at Amazon; Business Analyst: Support Assessment (passed); Mathematical Fundamentals for Machine Learning; AutoGluon: Automate ML tasks; Jupyter Notebooks.
+
+- **Outliers 2.0 Winner — Case Study Competition** — IIT Madras · Sep 2022. Developed strategic recommendations for Buy Now-Pay Later fintech platforms to ensure regulatory compliance amid RBI restrictions.
+- **Blendspace Certificate** — Sahityika: IIT Madras BS Literary Society · Feb 2023. Appreciation for excellent penmanship, creativity, and powerful elocution.
+- **Speakers Arena Panelist** — Aurora 2021, IIT Madras · Dec 2021. Debate Competition panelist.
+
+## Publications
+
+- **[Design of Photovoltaic System for School Library: A Case Study](https://iaeme.com/Home/article_id/IJARET_07_05_002)** — International Journal of Advanced Research in Engineering and Technology (IJARET) (2016). IJARET, Vol. 7, Issue 5, 2016, pp. 07–17. Designed a stand-alone solar photovoltaic system for the SSET library at SHIATS; annual consumption of 7,127 units can be halved with energy-efficient appliances, with the system paying back in 9 years and yielding 16 years of free electricity over its 25-year life.
+
 ## Connect
 
 <p align="center">
-  <a href="https://007nishan.github.io/" title="Portfolio"><img alt="Portfolio" src="https://img.shields.io/badge/-00719A?style=for-the-badge&logo=githubpages&logoColor=white" height="34"></a>
-  <a href="https://007nishan.github.io/Nishanur_Rahman_CV.pdf" title="Download CV"><img alt="Download CV" src="https://img.shields.io/badge/-A70E13?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" height="34"></a>
-  <a href="https://www.linkedin.com/in/007cn/" title="LinkedIn"><img alt="LinkedIn" src="https://img.shields.io/badge/-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" height="34"></a>
-  <a href="https://github.com/007nishan" title="GitHub"><img alt="GitHub" src="https://img.shields.io/badge/-181717?style=for-the-badge&logo=github&logoColor=white" height="34"></a>
-  <a href="https://orcid.org/0009-0007-8012-0182" title="ORCID"><img alt="ORCID" src="https://img.shields.io/badge/-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" height="34"></a>
-  <a href="https://x.com/NishanXX7" title="X"><img alt="X" src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=x&logoColor=white" height="34"></a>
-  <a href="mailto:nishan.rahman@yahoo.com" title="Email"><img alt="Email" src="https://img.shields.io/badge/-333333?style=for-the-badge&logo=gmail&logoColor=white" height="34"></a>
+  <a href="https://007nishan.github.io/" title="Portfolio"><img alt="Portfolio" title="Portfolio" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/portfolio.svg"></a>
+  <a href="https://007nishan.github.io/Nishanur_Rahman_CV.pdf" title="Download CV (PDF)"><img alt="Download CV (PDF)" title="Download CV (PDF)" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/cv.svg"></a>
+  <a href="https://www.linkedin.com/in/007cn/" title="LinkedIn"><img alt="LinkedIn" title="LinkedIn" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/linkedin.svg"></a>
+  <a href="https://github.com/007nishan" title="GitHub"><img alt="GitHub" title="GitHub" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/github.svg"></a>
+  <a href="https://orcid.org/0009-0007-8012-0182" title="ORCID"><img alt="ORCID" title="ORCID" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/orcid.svg"></a>
+  <a href="https://x.com/NishanXX7" title="X (Twitter)"><img alt="X (Twitter)" title="X (Twitter)" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/x.svg"></a>
+  <a href="mailto:nishan.rahman@yahoo.com" title="Email"><img alt="Email" title="Email" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/email.svg"></a>
 </p>
 
 ---

@@ -24,6 +24,7 @@ import time
 
 # name -> module under build/
 SPOKES = {
+    "icons": "build_icons",
     "site": "build_site",
     "cv_tex": "build_cv_tex",
     "docx": "build_docx",

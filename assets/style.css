@@ -118,23 +118,35 @@ code, pre, .diagram { font-family: var(--font-family-mono); }
   max-width: var(--max-width);
   padding: 0 var(--spacing-lg);
 }
-.social-links a {
+/* Connect tiles: self-hosted colored brand logos, hover-lift + tooltip */
+.social-tile {
+  position: relative;
   display: inline-flex;
-  align-items: center;
-  padding: 10px 18px;
-  font-family: var(--font-family-sans);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.8rem;
-  color: var(--color-primary-white);
-  background-color: var(--color-primary-blue);
-  border: 1px solid var(--color-primary-blue);
   border-radius: var(--radius-sm);
-  transition: all 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.social-links a img { width: 16px; height: 16px; margin-right: var(--spacing-sm); filter: brightness(0) invert(1); }
-.social-links a:hover { background-color: var(--color-primary-blue-dark); border-color: var(--color-primary-blue-dark); color: var(--color-primary-white); text-decoration: none; }
+.social-tile img { display: block; border-radius: var(--radius-sm); }
+.social-tile:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.18); text-decoration: none; }
+/* Hover tooltip driven by data-tip (no JS) */
+.social-tile::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--color-neutral-900);
+  color: #fff;
+  font-family: var(--font-family-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  padding: 4px 9px;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.social-tile:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* ---- Layout ---- */
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-lg); }

@@ -37,11 +37,11 @@
     </div>
   </div>
 
-  <!-- Social / contact links -->
+  <!-- Connect: clickable self-hosted logo tiles with hover tooltips -->
   <div class="social-links">
-    {%- for p in basics.profiles %}
-    <a href="{{ p.url }}" rel="me" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/{{ p.x_icon }}.svg" alt="{{ p.network }}"> {{ p.network }}
+    {%- for c in connect %}
+    <a class="social-tile" href="{{ c.url }}" data-tip="{{ c.label }}" aria-label="{{ c.label }}"{% if c.blank %} target="_blank" rel="noopener"{% endif %}>
+      <img src="assets/icons/{{ c.key }}.svg" alt="{{ c.label }}" width="40" height="40">
     </a>
     {%- endfor %}
   </div>

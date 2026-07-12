@@ -15,6 +15,20 @@ ROOT = os.path.dirname(HERE)
 DATA = os.path.join(ROOT, "data", "resume.json")
 OUT = os.path.join(ROOT, "README.md")
 
+_MONTHS = {"01": "Jan", "02": "Feb", "03": "Mar", "04": "Apr", "05": "May",
+           "06": "Jun", "07": "Jul", "08": "Aug", "09": "Sep", "10": "Oct",
+           "11": "Nov", "12": "Dec"}
+
+
+def _fmt_month(value):
+    """'2022-09' -> 'Sep 2022'; '2016' -> '2016'; '' -> ''."""
+    if not value:
+        return ""
+    parts = str(value).split("-")
+    if len(parts) >= 2 and parts[1] in _MONTHS:
+        return f"{_MONTHS[parts[1]]} {parts[0]}"
+    return parts[0]
+
 # Shields.io badge config per network: (label, color, logo).
 BADGE = {
     "LinkedIn": ("LinkedIn", "0A66C2", "linkedin"),
@@ -33,13 +47,28 @@ def badge(profile):
             f'src="{img}"></a>')
 
 
-def icon_only(network, url, color, logo):
-    """A single clickable, icon-only brand logo (no text label, no visible URL).
-    shields.io for-the-badge, colored so it stays visible on GitHub dark mode.
-    All slugs verified to return HTTP 200."""
-    img = (f"https://img.shields.io/badge/-{color}"
-           f"?style=for-the-badge&logo={logo}&logoColor=white")
-    return f'<a href="{url}" title="{network}"><img alt="{network}" src="{img}" height="34"></a>'
+# Base URL for the self-hosted logo tiles (raw so they render in BOTH repos —
+# the profile repo can't use relative paths). Points at the site repo.
+ICONS_RAW = "https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons"
+
+# Connect row: (icon file key, hover label, link-resolver). Order = display order.
+CONNECT = [
+    ("portfolio", "Portfolio", "site"),
+    ("cv",        "Download CV (PDF)", "cv"),
+    ("linkedin",  "LinkedIn",  "LinkedIn"),
+    ("github",    "GitHub",    "GitHub"),
+    ("orcid",     "ORCID",     "ORCID"),
+    ("x",         "X (Twitter)", "X"),
+    ("email",     "Email",     "email"),
+]
+
+
+def connect_tile(key, label, url):
+    """Clickable self-hosted logo tile with a hover tooltip (title attr).
+    No text label, no visible URL — just the logo; hover shows the name."""
+    return (f'<a href="{url}" title="{label}">'
+            f'<img alt="{label}" title="{label}" height="40" '
+            f'src="{ICONS_RAW}/{key}.svg"></a>')
 
 
 def build(d):
@@ -105,20 +134,49 @@ def build(d):
         L.append(f"- **{e['studyType']} in {e['area']}** — {e['institution']}{score} ({when})")
     L.append("")
 
-    # --- Connect: ONE centered row of clickable, icon-only brand logos.
-    # No platform names, no visible URLs — click any logo to go there.
-    # Includes Portfolio, CV, socials, and Email (mailto) so nothing is lost.
+    # --- Hackathons ---
+    if d.get("x_hackathons"):
+        L.append("## Hackathons")
+        L.append("")
+        for h in d["x_hackathons"]:
+            L.append(f"- **[{h['name']}]({h['url']})** — {h['event']} ({h['year']}). {h['tagline']}.")
+        L.append("")
+
+    # --- Certifications & Awards ---
+    L.append("## Certifications & Awards")
+    L.append("")
+    cert_names = "; ".join(c["name"] for c in d["certificates"])
+    L.append(f"**Certifications:** {cert_names}.")
+    L.append("")
+    for a in d["awards"]:
+        when = _fmt_month(a.get("date"))
+        L.append(f"- **{a['title']}** — {a['awarder']}{(' · ' + when) if when else ''}. {a['summary']}")
+    L.append("")
+
+    # --- Publications ---
+    if d.get("publications"):
+        L.append("## Publications")
+        L.append("")
+        for p in d["publications"]:
+            title = f"[{p['name']}]({p['url']})" if p.get("url") else p["name"]
+            L.append(f"- **{title}** — {p['publisher']} ({p['releaseDate']}). {p['summary']}")
+        L.append("")
+
+    # --- Connect: ONE centered row of clickable, self-hosted logo tiles.
+    # No platform names, no visible URLs — hover a logo to see its name.
     L.append("## Connect")
     L.append("")
-    chips = [
-        icon_only("Portfolio", site, "00719A", "githubpages"),
-        icon_only("Download CV", cv_pdf, "A70E13", "adobeacrobatreader"),
-    ]
-    for p in profiles:
-        _label, color, logo = BADGE.get(p["network"], (p["network"], "555555", ""))
-        if logo:
-            chips.append(icon_only(p["network"], p["url"], color, logo))
-    chips.append(icon_only("Email", f"mailto:{b['email']}", "333333", "gmail"))
+    link_for = {
+        "site": site,
+        "cv": cv_pdf,
+        "email": f"mailto:{b['email']}",
+        **{p["network"]: p["url"] for p in profiles},
+    }
+    chips = []
+    for key, label, resolver in CONNECT:
+        url = link_for.get(resolver)
+        if url:
+            chips.append(connect_tile(key, label, url))
     L.append('<p align="center">')
     L.append("  " + "\n  ".join(chips))
     L.append("</p>")

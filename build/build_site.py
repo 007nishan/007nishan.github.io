@@ -89,6 +89,28 @@ def main():
 
     jsonld = build_jsonld(d)
 
+    # Connect row: self-hosted logo tiles (assets/icons/*.svg). Same order/keys
+    # as the README. `blank` opens external links in a new tab.
+    site_url = b["url"]
+    cv_pdf = site_url.rstrip("/") + "/Nishanur_Rahman_CV.pdf"
+    link_for = {
+        "site": site_url, "cv": cv_pdf, "email": f"mailto:{b['email']}",
+        **{p["network"]: p["url"] for p in b["profiles"]},
+    }
+    connect_spec = [
+        ("portfolio", "Portfolio", "site", False),
+        ("cv", "Download CV (PDF)", "cv", True),
+        ("linkedin", "LinkedIn", "LinkedIn", True),
+        ("github", "GitHub", "GitHub", True),
+        ("orcid", "ORCID", "ORCID", True),
+        ("x", "X (Twitter)", "X", True),
+        ("email", "Email", "email", False),
+    ]
+    connect = [
+        {"key": k, "label": lbl, "url": link_for[res], "blank": blank}
+        for k, lbl, res, blank in connect_spec if link_for.get(res)
+    ]
+
     # Only CV-relevant data is passed to the public page. Internal-only sections
     # (x_pipeline, x_presentlyLearning, testimonials, LinkedIn strategy) are
     # deliberately NOT rendered to the public site.
@@ -101,6 +123,7 @@ def main():
         basics=b,
         meta=d["meta"],
         profiles_by_network=profiles_by_network,
+        connect=connect,
         work=d["work"],
         education=d["education"],
         skills=d["skills"],
