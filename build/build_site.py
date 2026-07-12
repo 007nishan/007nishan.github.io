@@ -56,7 +56,7 @@ def build_jsonld(d):
         "jobTitle": b["label"],
         "email": f"mailto:{b['email']}",
         "url": b["url"],
-        "image": b["image"],
+        "image": b.get("imageAbsolute", b["image"]),
         "address": {
             "@type": "PostalAddress",
             "addressLocality": b["location"]["city"],
