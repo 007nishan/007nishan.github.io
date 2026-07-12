@@ -75,15 +75,20 @@ def build_jsonld(d):
 
 
 def _asset_version():
-    """Short content hash of style.css so the browser can never serve a stale
-    stylesheet — the <link> href changes whenever the CSS changes."""
-    import hashlib
-    css = os.path.join(ROOT, "assets", "style.css")
-    try:
-        with open(css, "rb") as f:
-            return hashlib.sha1(f.read()).hexdigest()[:8]
-    except FileNotFoundError:
-        return "1"
+    """Short content hash of style.css + all icon tiles, so the browser can never
+    serve a stale stylesheet OR stale logo — the ?v= query changes whenever any
+    of these assets change."""
+    import hashlib, glob
+    h = hashlib.sha1()
+    files = [os.path.join(ROOT, "assets", "style.css")]
+    files += sorted(glob.glob(os.path.join(ROOT, "assets", "icons", "*.svg")))
+    for fp in files:
+        try:
+            with open(fp, "rb") as f:
+                h.update(f.read())
+        except FileNotFoundError:
+            pass
+    return h.hexdigest()[:8]
 
 
 def main():

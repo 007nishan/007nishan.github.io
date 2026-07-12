@@ -41,7 +41,7 @@
   <div class="social-links">
     {%- for c in connect %}
     <a class="social-tile" href="{{ c.url }}" data-tip="{{ c.label }}" aria-label="{{ c.label }}"{% if c.blank %} target="_blank" rel="noopener"{% endif %}>
-      <img src="assets/icons/{{ c.key }}.svg" alt="{{ c.label }}" width="40" height="40">
+      <img src="assets/icons/{{ c.key }}.svg?v={{ asset_ver }}" alt="{{ c.label }}" width="40" height="40">
     </a>
     {%- endfor %}
   </div>

@@ -57,13 +57,13 @@ Operations and Data Science professional with 3+ years across AI/ML product deve
 ## Connect
 
 <p align="center">
-  <a href="https://007nishan.github.io/" title="Portfolio"><img alt="Portfolio" title="Portfolio" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/portfolio.svg"></a>
-  <a href="https://007nishan.github.io/Nishanur_Rahman_CV.pdf" title="Download CV (PDF)"><img alt="Download CV (PDF)" title="Download CV (PDF)" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/cv.svg"></a>
-  <a href="https://www.linkedin.com/in/007cn/" title="LinkedIn"><img alt="LinkedIn" title="LinkedIn" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/linkedin.svg"></a>
-  <a href="https://github.com/007nishan" title="GitHub"><img alt="GitHub" title="GitHub" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/github.svg"></a>
-  <a href="https://orcid.org/0009-0007-8012-0182" title="ORCID"><img alt="ORCID" title="ORCID" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/orcid.svg"></a>
-  <a href="https://x.com/NishanXX7" title="X (Twitter)"><img alt="X (Twitter)" title="X (Twitter)" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/x.svg"></a>
-  <a href="mailto:nishan.rahman@yahoo.com" title="Email"><img alt="Email" title="Email" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/email.svg"></a>
+  <a href="https://007nishan.github.io/" title="Portfolio"><img alt="Portfolio" title="Portfolio" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/portfolio.svg?v=a4c36527"></a>
+  <a href="https://007nishan.github.io/Nishanur_Rahman_CV.pdf" title="Download CV (PDF)"><img alt="Download CV (PDF)" title="Download CV (PDF)" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/cv.svg?v=9c5a5cb9"></a>
+  <a href="https://www.linkedin.com/in/007cn/" title="LinkedIn"><img alt="LinkedIn" title="LinkedIn" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/linkedin.svg?v=d4f35b8a"></a>
+  <a href="https://github.com/007nishan" title="GitHub"><img alt="GitHub" title="GitHub" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/github.svg?v=34efb7ec"></a>
+  <a href="https://orcid.org/0009-0007-8012-0182" title="ORCID"><img alt="ORCID" title="ORCID" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/orcid.svg?v=ee3e2108"></a>
+  <a href="https://x.com/NishanXX7" title="X (Twitter)"><img alt="X (Twitter)" title="X (Twitter)" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/x.svg?v=359afc5a"></a>
+  <a href="mailto:nishan.rahman@yahoo.com" title="Email"><img alt="Email" title="Email" height="40" src="https://raw.githubusercontent.com/007nishan/007nishan.github.io/main/assets/icons/email.svg?v=69d16718"></a>
 </p>
 
 ---

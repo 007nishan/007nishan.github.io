@@ -63,12 +63,24 @@ CONNECT = [
 ]
 
 
+def _icon_ver(key):
+    """Short content hash of an icon file, appended as ?v= so GitHub's image
+    proxy (camo) fetches the current logo instead of a cached one."""
+    import hashlib
+    fp = os.path.join(ROOT, "assets", "icons", f"{key}.svg")
+    try:
+        with open(fp, "rb") as f:
+            return hashlib.sha1(f.read()).hexdigest()[:8]
+    except FileNotFoundError:
+        return "1"
+
+
 def connect_tile(key, label, url):
     """Clickable self-hosted logo tile with a hover tooltip (title attr).
     No text label, no visible URL — just the logo; hover shows the name."""
     return (f'<a href="{url}" title="{label}">'
             f'<img alt="{label}" title="{label}" height="40" '
-            f'src="{ICONS_RAW}/{key}.svg"></a>')
+            f'src="{ICONS_RAW}/{key}.svg?v={_icon_ver(key)}"></a>')
 
 
 def build(d):
