@@ -54,11 +54,35 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # Explicit allowlist — no `git add -A`, so private artifacts
           # (linkedin.md, knowledge-graph/, extra pages) can never be published.
-          git add index.html Nishanur_Rahman_CV.pdf \
+          git add README.md index.html Nishanur_Rahman_CV.pdf \
                   cv/Nishanur_Rahman_CV.tex cv/Nishanur_Rahman_CV.docx cv/Nishanur_Rahman_CV.pdf
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
             git commit -m "chore: rebuild CV from resume.json [skip ci]"
+            git push
+          fi
+
+      # --- Cross-repo sync: push the same README to the GitHub PROFILE repo
+      #     (007nishan/007nishan) so the profile page auto-updates too.
+      #     Requires a repo-scoped PAT stored as secret PROFILE_REPO_TOKEN.
+      #     If the secret is absent, this step is skipped (CI stays green).
+      - name: Sync README to profile repo (007nishan/007nishan)
+        if: ${{ env.PROFILE_TOKEN != '' }}
+        env:
+          PROFILE_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+        run: |
+          set -e
+          tmp=$(mktemp -d)
+          git clone --depth 1 "https://x-access-token:${PROFILE_TOKEN}@github.com/007nishan/007nishan.git" "$tmp"
+          cp README.md "$tmp/README.md"
+          cd "$tmp"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "Profile README already up to date."
+          else
+            git commit -m "chore: sync profile README from resume.json"
             git push
           fi

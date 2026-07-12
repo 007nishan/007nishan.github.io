@@ -199,11 +199,15 @@ def build(d):
     b = d["basics"]
     profiles = {p["network"]: p for p in b["profiles"]}
     linkedin = profiles["LinkedIn"]["url"]
+    github = profiles["GitHub"]["url"]
+    site = b.get("url", "")
 
     # Heading
     add_two_col_row([(b["name"], True, False)], f"Email: {b['email']}", size=16, space_after=0)
     add_two_col_row([(f"LinkedIn: {linkedin}", False, False)],
-                    f"Mobile:  {b['phone']}", left_bold=False, size=10.5, space_after=2)
+                    f"Mobile:  {b['phone']}", left_bold=False, size=10.5, space_after=0)
+    add_two_col_row([(f"Portfolio: {site}", False, False)],
+                    f"GitHub: {github}", left_bold=False, size=10.5, space_after=2)
 
     # Summary
     add_section("Summary")

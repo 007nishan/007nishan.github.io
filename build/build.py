@@ -29,6 +29,7 @@ SPOKES = {
     "docx": "build_docx",
     "kg": "build_kg",
     "linkedin": "build_linkedin",
+    "readme": "build_readme",
 }
 
 

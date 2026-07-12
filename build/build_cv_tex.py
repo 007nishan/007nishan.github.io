@@ -135,20 +135,25 @@ def build(d):
     b = d["basics"]
     profiles = {p["network"]: p for p in b["profiles"]}
     linkedin = profiles["LinkedIn"]["url"]
+    github = profiles["GitHub"]["url"]
 
     L = [PREAMBLE]
 
     # ---- Heading ----
+    site = b.get("url", "")
     L.append("\n%----------HEADING--------------------------------------------------------------\n")
     L.append(r"""\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\LARGE {NAME}} & Email: \href{mailto:{EMAIL}}{{EMAILT}} \\
   \href{{LINK}}{LinkedIn: {LINK}} & Mobile:~~~{PHONE} \\
+  \href{{SITE}}{Portfolio: {SITE}} & \href{{GH}}{GitHub: {GH}} \\
 \end{tabular*}
 """
         .replace("{NAME}", tex(b["name"]))
         .replace("{EMAILT}", tex(b["email"]))
         .replace("{EMAIL}", b["email"])
         .replace("{PHONE}", tex(b["phone"]))
+        .replace("{SITE}", site)
+        .replace("{GH}", github)
         .replace("{LINK}", linkedin))
 
     # ---- Summary ----
