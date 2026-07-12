@@ -1,0 +1,38 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<h1 class="page-title">Presently learning</h1>
+<p class="page-intro">What I'm actively studying and building toward, plus certifications earned along the way.</p>
+
+<div class="section">
+  <h2>In progress</h2>
+  <div class="cards">
+    {%- for l in learning %}
+    <div class="card">
+      <h3>{{ l.name }}</h3>
+      <p>{{ l.detail }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <h2>Skills</h2>
+  {%- for group in skills %}
+  <div class="skill-group">
+    <strong>{{ group.name }}:</strong>
+    {%- for kw in group.keywords %}<span class="tag">{{ kw }}</span>{%- endfor %}
+  </div>
+  {%- endfor %}
+</div>
+
+<div class="section">
+  <h2>Certifications</h2>
+  <ul>
+    {%- for c in certificates %}
+    <li>{{ c.name }}{% if c.issuer %} <span class="muted">— {{ c.issuer }}</span>{% endif %}</li>
+    {%- endfor %}
+  </ul>
+  <p class="muted">Certifications are verifiable on my <a href="{{ profiles_by_network.LinkedIn.url }}" target="_blank">LinkedIn</a>.</p>
+</div>
+{% endblock %}

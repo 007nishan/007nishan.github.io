@@ -1,0 +1,36 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<h1 class="page-title">Projects</h1>
+<p class="page-intro">Gen AI, LLM automation, and operational-analytics systems I've built — plus hackathon work.</p>
+
+<div class="section">
+  <h2>{{ current_role.name }} — {{ current_role.position }}</h2>
+  <p class="muted">{{ current_role.x_dateDisplay or (current_role.startDate ~ ' – Present') }} · {{ current_role.location }}</p>
+  <div class="cards">
+    {%- for p in current_role.highlights %}
+    <div class="card">
+      <h3>{{ p.name }}</h3>
+      <p>{{ p.description }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+
+{%- for h in hackathons %}
+<div class="section">
+  <h2>{{ h.name }}</h2>
+  <p class="muted">{{ h.event }} · {{ h.year }} — <a href="{{ h.url }}" target="_blank">View hackathon idea →</a></p>
+  <p><em>{{ h.tagline }}</em></p>
+  <div class="cards">
+    {%- for p in h.highlights %}
+    <div class="card">
+      <h3>{{ p.name }}</h3>
+      <p>{{ p.description }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+  <p class="muted">Status: {{ h.status }}</p>
+</div>
+{%- endfor %}
+{% endblock %}

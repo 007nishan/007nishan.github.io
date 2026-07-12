@@ -1,0 +1,38 @@
+{% extends "base.html.j2" %}
+
+{% block hero %}
+<div class="profile-section">
+  <img class="avatar" src="{{ basics.image }}" alt="{{ basics.name }}">
+  <div class="tagline">
+    <h1>{{ basics.name }}</h1>
+    <p>{{ basics.label }}</p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="section">
+  <h2>About</h2>
+  <p>{{ basics.summary }}</p>
+  <a class="btn" href="Nishanur_Rahman_CV.pdf">Download CV (PDF)</a>
+  <a class="btn secondary" href="projects.html">See my work →</a>
+</div>
+
+<div class="section">
+  <h2>Featured Work</h2>
+  <div class="cards">
+    {%- for p in featured %}
+    <div class="card">
+      <h3>{{ p.name }}</h3>
+      <p>{{ p.description }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <h2>Currently</h2>
+  <p><strong>{{ current_role.position }}</strong> at <strong>{{ current_role.name }}</strong> — {{ current_role.summary }}</p>
+  <p class="muted">Also pursuing a BS in Data Science & Applications at IIT Madras.</p>
+</div>
+{% endblock %}

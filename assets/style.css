@@ -1,0 +1,191 @@
+/* =============================================================================
+   Nishanur Rahman — portfolio site styles
+   GENERATED-SITE stylesheet. Safe to hand-edit; it is not overwritten by the
+   build (only the HTML pages are). Design evolves the original green/serif look.
+   ========================================================================== */
+:root {
+  --primary-bg: #F8F9FA;
+  --section-bg: #FFFFFF;
+  --accent-color: #2C5530;
+  --accent-dark: #1e3a21;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --border-color: #E0E0E0;
+  --max-width: 960px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--accent-color);
+}
+
+a { color: var(--accent-color); }
+
+/* ---- Top navigation ---- */
+.nav-top {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px 10px;
+  background-color: var(--section-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.nav-top a {
+  text-decoration: none;
+  padding: 10px 18px;
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  font-weight: 400;
+  border-radius: 25px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+.nav-top a:hover { background-color: var(--accent-dark); }
+.nav-top a.active { background-color: var(--accent-dark); box-shadow: inset 0 0 0 2px rgba(255,255,255,0.4); }
+
+/* ---- Social links ---- */
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 10px;
+}
+.social-links a {
+  display: flex;
+  align-items: center;
+  padding: 9px 15px;
+  text-decoration: none;
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  font-weight: 400;
+  border-radius: 25px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+.social-links a img { width: 18px; height: 18px; margin-right: 8px; filter: brightness(0) invert(1); }
+.social-links a:hover { background-color: var(--accent-dark); }
+
+/* ---- Profile / hero ---- */
+.profile-section {
+  max-width: var(--max-width);
+  margin: 40px auto 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  padding: 0 20px;
+}
+.profile-section img.avatar {
+  width: 180px; height: 180px; border-radius: 50%;
+  object-fit: cover; border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.tagline h1 { margin: 0; font-size: 42px; font-weight: 700; letter-spacing: -1px; }
+.tagline p { margin: 10px 0 0; font-size: 18px; color: var(--text-light); font-weight: 300; }
+
+/* ---- Layout containers ---- */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+.page-title { text-align: center; margin: 30px 0 10px; font-size: 34px; }
+.page-intro { text-align: center; color: var(--text-light); max-width: 720px; margin: 0 auto 20px; }
+
+.section {
+  background-color: var(--section-bg);
+  padding: 28px 30px;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.section h2 { margin-top: 0; font-size: 26px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; }
+.section h3 { margin-bottom: 4px; font-size: 20px; }
+.muted { color: var(--text-light); font-size: 14px; }
+
+/* ---- Cards grid (projects, learning) ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.card {
+  background: var(--section-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.10); }
+.card h3 { margin: 0 0 8px; font-size: 19px; }
+.card p { margin: 0; font-size: 15px; }
+.tag {
+  display: inline-block; background: #eef3ee; color: var(--accent-color);
+  border-radius: 12px; padding: 3px 10px; font-size: 12px; margin: 4px 6px 0 0;
+}
+
+/* ---- Timeline (experience / life) ---- */
+.timeline { position: relative; margin: 20px 0; padding-left: 28px; }
+.timeline::before {
+  content: ""; position: absolute; left: 8px; top: 0; bottom: 0;
+  width: 2px; background: var(--border-color);
+}
+.timeline-item { position: relative; margin-bottom: 26px; }
+.timeline-item::before {
+  content: ""; position: absolute; left: -24px; top: 6px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent-color); border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+.timeline-item .when { color: var(--text-light); font-size: 13px; font-weight: 400; }
+.timeline-item h3 { margin: 2px 0; }
+.timeline-item .where { font-style: italic; color: var(--text-light); font-size: 14px; }
+.timeline-item ul { margin: 8px 0 0; padding-left: 0; list-style: none; }
+.timeline-item ul li { padding: 5px 0 5px 22px; position: relative; font-size: 15px; }
+.timeline-item ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent-color); font-weight: bold; }
+.timeline-item ul li strong { color: var(--accent-color); }
+
+/* ---- Skills ---- */
+.skill-group { margin-bottom: 14px; }
+.skill-group strong { color: var(--accent-color); }
+
+/* ---- Callout / pipeline diagram ---- */
+.callout { background: #eef3ee; border-left: 4px solid var(--accent-color); padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.diagram { font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; white-space: pre; overflow-x: auto; background: #1e3a21; color: #eaf3ea; padding: 18px; border-radius: 8px; line-height: 1.4; }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block; text-decoration: none; padding: 10px 20px;
+  background: var(--accent-color); color: #fff; border-radius: 25px;
+  font-size: 14px; transition: 0.3s; margin: 6px 6px 0 0;
+}
+.btn:hover { background: var(--accent-dark); }
+.btn.secondary { background: #fff; color: var(--accent-color); border: 2px solid var(--accent-color); }
+
+/* ---- About images ---- */
+.images-row { display: flex; justify-content: center; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
+.about-image { width: 250px; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: 0.3s; }
+.about-image:hover { transform: scale(1.02); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+
+/* ---- Footer ---- */
+.site-footer { text-align: center; color: var(--text-light); font-size: 13px; padding: 30px 20px 40px; }
+.site-footer a { color: var(--text-light); }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .nav-top a { padding: 8px 13px; font-size: 13px; }
+  .profile-section img.avatar { width: 140px; height: 140px; }
+  .tagline h1 { font-size: 32px; }
+  .about-image { width: 100%; max-width: 300px; height: 250px; }
+  .section { padding: 20px; }
+}

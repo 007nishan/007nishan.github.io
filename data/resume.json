@@ -1,0 +1,219 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "meta": {
+    "canonical": "https://007nishan.github.io/",
+    "version": "1.0.0",
+    "lastModified": "2026-07-12",
+    "note": "SINGLE SOURCE OF TRUTH. Edit ONLY this file. All artifacts (website, CV .tex/PDF/DOCX, LinkedIn blocks, knowledge graph) are regenerated from it by `python build/build.py`. See README.md.",
+    "standard": "JSON Resume (jsonresume.org/schema) v1.0.0, extended with x_* namespaced fields for site-specific content."
+  },
+
+  "basics": {
+    "name": "Nishanur Rahman",
+    "label": "Operations & Data Science Professional | AI/ML & LLM Automation",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGGQoxktXYuYw/profile-displayphoto-crop_800_800/B56ZlL5wmBKIAI-/0/1757915058250?e=1762992000&v=beta&t=S943Is0fJbCi7aYP0Jfd0_egNYLt6DGSEU65VVvGDI0",
+    "email": "nishan.rahman@yahoo.com",
+    "phone": "+91-885-3185-390",
+    "url": "https://007nishan.github.io/",
+    "summary": "Operations and Data Science professional with 3+ years across AI/ML product development, LLM-powered automation, full-stack web applications, and operational analytics. Currently building Gen AI-driven quality systems at Amazon's Last Mile operations — including self-improving RAG architectures, real-time dashboards, and SLA engines. Passionate about translating complex operational problems into scalable, data-driven solutions that directly prevent customer-facing defects. Background in Mechanical Engineering with an ongoing BS in Data Science from IIT Madras.",
+    "location": {
+      "city": "Bengaluru",
+      "region": "Karnataka",
+      "countryCode": "IN"
+    },
+    "profiles": [
+      { "network": "LinkedIn", "username": "007cn", "url": "https://www.linkedin.com/in/007cn/", "x_icon": "linkedin" },
+      { "network": "GitHub", "username": "007nishan", "url": "https://github.com/007nishan", "x_icon": "github" },
+      { "network": "ORCID", "username": "0009-0007-8012-0182", "url": "https://orcid.org/0009-0007-8012-0182", "x_icon": "orcid" },
+      { "network": "X", "username": "NishanXX7", "url": "https://x.com/NishanXX7", "x_icon": "x" }
+    ]
+  },
+
+  "work": [
+    {
+      "name": "Amazon",
+      "location": "Bengaluru, India (On-site)",
+      "position": "Transportation Specialist",
+      "x_employment": "Full-time",
+      "startDate": "2024-08",
+      "endDate": null,
+      "url": "https://www.amazon.com/",
+      "summary": "Building Gen AI-driven quality systems for Last Mile operations — self-improving RAG assistants, real-time dashboards, and SLA engines that prevent customer-facing defects.",
+      "highlights": [
+        { "name": "Resolve-It — LLM Powered Andon Cord", "description": "Built an LLM-powered Andon Cord enabling auditors to raise SOP doubts from GeoStudio in one click. System performs semantic retrieval against Policy 2.0 and verified responses, generates AI suggestions for POC validation, and delivers resolutions in ~5 minutes. Implements Human Feedback Reinforcement Learning — managers approve, reject, or edit responses daily, making the system self-improving. Impact: ~200 min/day recovered across 20 auditors." },
+        { "name": "Real-Time Revert Dashboard", "description": "Built an internal web application transforming manual quality reporting into an always-current intelligence platform. Managers upload daily revert case batches; system auto-identifies unique cases and computes role-aware KPIs on every page request — Pre-Appeal Quality, Post-Appeal Quality, Volume Trends, and Reason Distribution. Role-based views for auditors, managers, and skip-level leaders — eliminating ad-hoc reporting entirely." },
+        { "name": "Slack Workflow Based Andon Cord", "description": "Deployed a Slack-integrated anonymous doubt resolution workflow enabling auditors to raise SOP, process, and tool queries while maintaining complete anonymity. Each submission receives a unique Ticket ID, routed to managers with Answer, Assign, or Check Status options. Resolutions delivered via Slack DM and posted in team channel for organization-wide reference — ensuring consistent understanding of dynamic procedures." },
+        { "name": "AWS Hosted SLA Engine and Dashboard for Slack Workflow", "description": "Engineered an SLA tracking engine monitoring ticket lifecycle metrics — raise-to-resolution time, escalation rates, and manager approval timelines. Unresolved tickets beyond SLA are automatically escalated to leadership, ensuring zero unanswered queries. Monitoring dashboard provides leadership real-time visibility into resolution health and SLA compliance." },
+        { "name": "Project Prophesy", "description": "Built a proactive detection mechanism that flags repeat-defect addresses prone to escalation using multi-signal analysis, shifting defect handling from reactive to preventive." },
+        { "name": "Project Polygon", "description": "Reduced Shipping & Delivery Support (SDS) expenditure by enriching the learning datasets for Global Address Management (GAM) addresses that map to multiple delivery locations." },
+        { "name": "Project Place Based Geocoding", "description": "Merged the GAM and Geo-Tech address systems onto a single Place-Based Geocoding (PBG) learning model, eliminating the data dispersion caused by maintaining two disparate systems." },
+        { "name": "Data Mining", "description": "Corrected erroneous entries and augmented incomplete learned data points in the GAM machine-learning model, improving the completeness of its training data." },
+        { "name": "Data Sanitization", "description": "Sanitized inputs to the GAM Flywheel pipeline so the automated Address Resolution Process (ARP) receives clean, correctly structured data." }
+      ]
+    },
+    {
+      "name": "NPTEL — Joy of Computing using Python (Course id: noc24-cs57)",
+      "location": "Remote",
+      "position": "Teaching Assistant",
+      "x_employment": "Part-time",
+      "startDate": "2023-12",
+      "endDate": "2024-04",
+      "summary": "Teaching assistant for a national online Python course delivered to 60,249 students.",
+      "highlights": [
+        { "name": "Weekly Assignment", "description": "Developed comprehensive, challenging, and original assignments that extended beyond lecture content, introducing next-level concepts to build upon foundational material covered in class." },
+        { "name": "Daily Challenge Problem", "description": "Assessed the overall proficiency of the cohort and posed daily problems to encourage independent problem-solving, helping students realize the subject's potential and their ability to apply concepts effectively." },
+        { "name": "Daily Doubt Clearing", "description": "Provided one-on-one, ticket-based support to resolve student queries. Evaluated each student's grasp of concepts and tailored explanations to ensure proper conceptual understanding while discouraging rote learning." },
+        { "name": "Impact", "description": "Delivered course to 60,249 students, with 24,330 registrations and 12,432 successful certifications." }
+      ]
+    },
+    {
+      "name": "Margazhi — IITM",
+      "location": "Remote",
+      "position": "Super Coordinator — Student Relations",
+      "x_employment": "HR Lead",
+      "startDate": "2023-11",
+      "endDate": "2024-03",
+      "summary": "",
+      "highlights": [
+        { "name": "Served as HR Lead", "description": "Led event coordination, supervised automation tool development, managed hospitality, and maintained multi-level data records, ensuring transparency and efficiency." }
+      ]
+    },
+    {
+      "name": "Paradox — IITM",
+      "location": "On-site",
+      "position": "Coordinator — Student Relations",
+      "x_employment": "HR Associate",
+      "startDate": "2023-03",
+      "endDate": "2024-06",
+      "summary": "",
+      "highlights": [
+        { "name": "Served as HR Associate", "description": "Leveraged event coordination and hospitality. Maintained multi-level data records and generated related reports." }
+      ]
+    },
+    {
+      "name": "NTPC",
+      "location": "On-site",
+      "position": "Industrial Training",
+      "x_employment": "Ref. No: 08/HR/EDC/1.22/ Reg. No. 2044",
+      "startDate": "2016",
+      "endDate": "2016",
+      "x_dateDisplay": "Ref. No: 08/HR/EDC/1.22/ Reg. No. 2044",
+      "summary": "",
+      "highlights": [
+        { "name": "Power Plant Engineering", "description": "Rigorously studied various Power Generation processes - from plant establishment to power generation." }
+      ]
+    }
+  ],
+
+  "x_hackathons": [
+    {
+      "name": "Resolve-It 2.0 — Self-Improving GenAI Andon Cord",
+      "event": "LMAQ GenAI Hackathon 2026",
+      "url": "https://hack.amazon.com/#lmaqgenai2026/ideas/138436",
+      "tagline": "Conversational RAG assistant with live case context and human-in-the-loop ticketing",
+      "year": "2026",
+      "status": "Prototype submitted for review with the Data Governance team.",
+      "highlights": [
+        { "name": "Live Conversational Bot", "description": "Enhanced Resolve-It into a chatbot embedded directly in GeoStudio that loads live case context, letting auditors converse for instant, SOP-grounded guidance — making the system faster and more robust than the one-click predecessor." },
+        { "name": "Grounded RAG + Guardrails", "description": "Answers are generated only from retrieved program SOPs, anecdotes, and manager-approved resolutions, with three layers of reliability — source grounding, contextual grounding checks, and confidence thresholds that route low-certainty responses to manager review." },
+        { "name": "Human-in-the-Loop Ticketing", "description": "A “Disagree” button raises a ticket the moment the AI's answer is unsatisfactory or beyond scope; manager-resolved tickets are re-ingested into the Knowledge Base with elevated retrieval priority, creating a continuous self-improving loop." },
+        { "name": "Impact", "description": "Designed to support 300+ auditors across 3 sites served by only 14 SPOCs, recovering ~50% of SPOC bandwidth (~7 FTEs / ~14,560 hours annually) and shifting error detection from downstream QC to the point of decision." }
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "Indian Institute of Technology, Madras",
+      "location": "Chennai, India",
+      "area": "Data Science and Applications",
+      "studyType": "Bachelor of Science (BS)",
+      "startDate": "",
+      "endDate": "",
+      "x_dateDisplay": "Pursuing",
+      "courses": ["Machine Learning", "Statistics", "Probability", "Linear Algebra", "Database Management Systems", "SQL", "Python"]
+    },
+    {
+      "institution": "Sam Higginbottom University of Agriculture, Technology and Sciences (SHUATS)",
+      "location": "Prayagraj, India",
+      "area": "Mechanical Engineering",
+      "studyType": "Bachelor of Technology",
+      "score": "CGPA: 8.88",
+      "startDate": "",
+      "endDate": "2016-09",
+      "x_dateDisplay": "Sep 2016",
+      "courses": ["Programming in C", "Numerical Analysis", "Robotics", "Computer Numerical Control", "Computer Aided Design", "Machine Design"]
+    }
+  ],
+
+  "skills": [
+    { "name": "Languages", "keywords": ["Python", "SQL", "JavaScript", "Bash", "HTML", "Markdown"] },
+    { "name": "AI/ML", "keywords": ["LLM", "RAG", "Reinforcement Learning", "TensorFlow", "PyTorch", "Pandas", "NumPy", "NLTK", "NetworkX"] },
+    { "name": "Frameworks", "keywords": ["Flask", "Matplotlib", "AutoGluon"] },
+    { "name": "Tools", "keywords": ["Git", "PostgreSQL", "Anaconda", "VS Code", "Jupyter Notebooks"] },
+    { "name": "Platforms", "keywords": ["Linux", "Windows", "AWS Cloud"] },
+    { "name": "Soft Skills", "keywords": ["Event Management", "Leadership", "Writing", "Public Speaking", "Time Management"] }
+  ],
+
+  "certificates": [
+    { "name": "Six Sigma Green Belt", "issuer": "" },
+    { "name": "Lean Six Sigma White Belt", "issuer": "" },
+    { "name": "Agentic AI: Applications from Concept to Code | Coding with Agents | Essential Concepts for Builders", "issuer": "" },
+    { "name": "AI Fundamentals", "issuer": "" },
+    { "name": "Software Architecture: Foundations", "issuer": "" },
+    { "name": "Kiro at Amazon", "issuer": "Amazon" },
+    { "name": "Business Analyst: Support Assessment (passed)", "issuer": "" },
+    { "name": "Mathematical Fundamentals for Machine Learning", "issuer": "" },
+    { "name": "AutoGluon: Automate ML tasks", "issuer": "" },
+    { "name": "Jupyter Notebooks", "issuer": "" }
+  ],
+
+  "awards": [
+    { "title": "Outliers 2.0 Winner — Case Study Competition", "date": "2022-09", "awarder": "IIT Madras", "summary": "Developed strategic recommendations for Buy Now-Pay Later fintech platforms to ensure regulatory compliance amid RBI restrictions." },
+    { "title": "Blendspace Certificate", "date": "2023-02", "awarder": "Sahityika: IIT Madras BS Literary Society", "summary": "Appreciation for excellent penmanship, creativity, and powerful elocution." },
+    { "title": "Speakers Arena Panelist", "date": "2021-12", "awarder": "Aurora 2021, IIT Madras", "summary": "Debate Competition panelist." }
+  ],
+
+  "publications": [
+    {
+      "name": "Design of Photovoltaic System for School Library: A Case Study",
+      "publisher": "International Journal of Advanced Research in Engineering and Technology (IJARET)",
+      "releaseDate": "2016",
+      "url": "https://iaeme.com/Home/article_id/IJARET_07_05_002",
+      "summary": "IJARET, Vol. 7, Issue 5, 2016, pp. 07–17. Designed a stand-alone solar photovoltaic system for the SSET library at SHIATS; annual consumption of 7,127 units can be halved with energy-efficient appliances, with the system paying back in 9 years and yielding 16 years of free electricity over its 25-year life."
+    }
+  ],
+
+  "volunteer": [
+    { "organization": "Amazon Global Month of Volunteering", "position": "Volunteer", "location": "Bengaluru, India", "x_dateDisplay": "2025", "summary": "Collaborated with 100+ volunteers to assemble 220 hygiene kits for vulnerable women." },
+    { "organization": "Amazon Education is Key", "position": "Volunteer", "location": "Bengaluru, India", "x_dateDisplay": "2025", "summary": "Volunteered during Education is Key Campaign." }
+  ],
+
+  "interests": [
+    { "name": "Hobbies", "keywords": ["Writing", "Public Speaking", "Reading about AI/ML advancements", "Problem Solving", "Open Source Exploration", "Cricket"] }
+  ],
+
+  "x_presentlyLearning": [
+    { "name": "Agentic AI & multi-agent systems", "detail": "From concept to code — building agents that plan, use tools, and self-correct." },
+    { "name": "Retrieval-Augmented Generation at scale", "detail": "Grounding, guardrails, and confidence-thresholded routing for reliable LLM systems." },
+    { "name": "Software Architecture", "detail": "Foundations of designing scalable, maintainable systems." },
+    { "name": "Knowledge graphs & personal AI assistants", "detail": "Property-graph modeling of a real-time, self-updating personal knowledge base." }
+  ],
+
+  "x_pipeline": {
+    "title": "This site builds itself.",
+    "intro": "This portfolio is generated from a single source-of-truth data file (data/resume.json) using a hub-and-spoke pipeline. One edit propagates to every surface — the website, my CV (PDF & DOCX), a knowledge graph, and LinkedIn-ready text — automatically on every push via GitHub Actions.",
+    "principle": "DRY — every piece of knowledge has a single, unambiguous, authoritative representation (Hunt & Thomas, The Pragmatic Programmer, 1999).",
+    "spokes": [
+      { "name": "7 HTML pages", "detail": "Rendered from Jinja2 templates with schema.org/JSON-LD structured data for SEO." },
+      { "name": "CV → PDF", "detail": "LaTeX generated from resume.json and compiled by TeX Live in CI." },
+      { "name": "CV → DOCX", "detail": "python-docx rendering, mirroring the PDF layout." },
+      { "name": "Knowledge Graph", "detail": "A property graph (schema.org + JSON Resume + ESCO ontology) regenerated from the same data." },
+      { "name": "LinkedIn blocks", "detail": "Paste-ready, keyword-optimized headline/about/experience text (LinkedIn has no public write API, so this stays assisted-manual)." }
+    ]
+  },
+
+  "x_testimonials": [
+    { "quote": "", "author": "", "role": "", "note": "Placeholder — add testimonials here in resume.json and they render automatically." }
+  ]
+}

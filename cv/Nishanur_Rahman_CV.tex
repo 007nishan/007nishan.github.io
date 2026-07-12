@@ -1,0 +1,167 @@
+%-------------------------------------------------------------------------------
+% Nishanur Rahman - Resume / CV
+% GENERATED FILE -- do not edit by hand. Source of truth: data/resume.json
+% Regenerate with: python build/build_cv_tex.py  (or python build/build.py)
+%-------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=blue,
+  citecolor=blue,
+}
+\usepackage{geometry}
+
+\geometry{a4paper, left=0.5in, right=0.5in, top=0.5in, bottom=0.5in}
+\pagestyle{empty}
+
+\urlstyle{rm}
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}
+  {\scshape\large}{}{0em}{}[\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\newcommand{\resumeItem}[2]{%
+  \item\textbf{#1}: #2%
+}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}}
+\newcommand{\resumeSubheading}[4]{%
+  \item
+  \begin{tabularx}{0.99\textwidth}{@{}X@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabularx}%
+}
+\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeSubHeadingListStart}{%
+  \begin{itemize}[leftmargin=0.0in, label={}, topsep=2pt, parsep=2pt, itemsep=2pt]%
+}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{%
+  \begin{itemize}[leftmargin=*, topsep=2pt, parsep=1pt, itemsep=2pt]%
+}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+%===============================================================================
+\begin{document}
+
+%----------HEADING--------------------------------------------------------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\LARGE Nishanur Rahman} & Email: \href{mailto:nishan.rahman@yahoo.com}{nishan.rahman@yahoo.com} \\
+  \href{https://www.linkedin.com/in/007cn/}{LinkedIn: https://www.linkedin.com/in/007cn/} & Mobile:~~~+91-885-3185-390 \\
+\end{tabular*}
+
+%-----------SUMMARY-------------------------------------------------------------
+\section{Summary}
+Operations and Data Science professional with 3+ years across AI/ML product development, LLM-powered automation, full-stack web applications, and operational analytics. Currently building Gen AI-driven quality systems at Amazon's Last Mile operations --- including self-improving RAG architectures, real-time dashboards, and SLA engines. Passionate about translating complex operational problems into scalable, data-driven solutions that directly prevent customer-facing defects. Background in Mechanical Engineering with an ongoing BS in Data Science from IIT Madras.
+
+%-----------SKILLS--------------------------------------------------------------
+\section{Skills}
+\resumeSubHeadingListStart
+  \resumeSubItem{Languages}{Python, SQL, JavaScript, Bash, HTML, Markdown}
+  \resumeSubItem{AI/ML}{LLM, RAG, Reinforcement Learning, TensorFlow, PyTorch, Pandas, NumPy, NLTK, NetworkX}
+  \resumeSubItem{Frameworks}{Flask, Matplotlib, AutoGluon}
+  \resumeSubItem{Tools}{Git, PostgreSQL, Anaconda, VS Code, Jupyter Notebooks}
+  \resumeSubItem{Platforms}{Linux, Windows, AWS Cloud}
+  \resumeSubItem{Soft Skills}{Event Management, Leadership, Writing, Public Speaking, Time Management}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE---------------------------------------------------------
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading{Amazon}{Bengaluru, India (On-site)}{Transportation Specialist (Full-time)}{Aug 2024 - Present}
+  \resumeItemListStart
+    \resumeItem{Resolve-It --- LLM Powered Andon Cord}{Built an LLM-powered Andon Cord enabling auditors to raise SOP doubts from GeoStudio in one click. System performs semantic retrieval against Policy 2.0 and verified responses, generates AI suggestions for POC validation, and delivers resolutions in \textasciitilde{}5 minutes. Implements Human Feedback Reinforcement Learning --- managers approve, reject, or edit responses daily, making the system self-improving. Impact: \textasciitilde{}200 min/day recovered across 20 auditors.}
+    \resumeItem{Real-Time Revert Dashboard}{Built an internal web application transforming manual quality reporting into an always-current intelligence platform. Managers upload daily revert case batches; system auto-identifies unique cases and computes role-aware KPIs on every page request --- Pre-Appeal Quality, Post-Appeal Quality, Volume Trends, and Reason Distribution. Role-based views for auditors, managers, and skip-level leaders --- eliminating ad-hoc reporting entirely.}
+    \resumeItem{Slack Workflow Based Andon Cord}{Deployed a Slack-integrated anonymous doubt resolution workflow enabling auditors to raise SOP, process, and tool queries while maintaining complete anonymity. Each submission receives a unique Ticket ID, routed to managers with Answer, Assign, or Check Status options. Resolutions delivered via Slack DM and posted in team channel for organization-wide reference --- ensuring consistent understanding of dynamic procedures.}
+    \resumeItem{AWS Hosted SLA Engine and Dashboard for Slack Workflow}{Engineered an SLA tracking engine monitoring ticket lifecycle metrics --- raise-to-resolution time, escalation rates, and manager approval timelines. Unresolved tickets beyond SLA are automatically escalated to leadership, ensuring zero unanswered queries. Monitoring dashboard provides leadership real-time visibility into resolution health and SLA compliance.}
+    \resumeItem{Project Prophesy}{Built a proactive detection mechanism that flags repeat-defect addresses prone to escalation using multi-signal analysis, shifting defect handling from reactive to preventive.}
+    \resumeItem{Project Polygon}{Reduced Shipping \& Delivery Support (SDS) expenditure by enriching the learning datasets for Global Address Management (GAM) addresses that map to multiple delivery locations.}
+    \resumeItem{Project Place Based Geocoding}{Merged the GAM and Geo-Tech address systems onto a single Place-Based Geocoding (PBG) learning model, eliminating the data dispersion caused by maintaining two disparate systems.}
+    \resumeItem{Data Mining}{Corrected erroneous entries and augmented incomplete learned data points in the GAM machine-learning model, improving the completeness of its training data.}
+    \resumeItem{Data Sanitization}{Sanitized inputs to the GAM Flywheel pipeline so the automated Address Resolution Process (ARP) receives clean, correctly structured data.}
+  \resumeItemListEnd
+  \resumeSubheading{NPTEL --- Joy of Computing using Python (Course id: noc24-cs57)}{Remote}{Teaching Assistant (Part-time)}{Dec 2023 - Apr 2024}
+  \resumeItemListStart
+    \resumeItem{Weekly Assignment}{Developed comprehensive, challenging, and original assignments that extended beyond lecture content, introducing next-level concepts to build upon foundational material covered in class.}
+    \resumeItem{Daily Challenge Problem}{Assessed the overall proficiency of the cohort and posed daily problems to encourage independent problem-solving, helping students realize the subject's potential and their ability to apply concepts effectively.}
+    \resumeItem{Daily Doubt Clearing}{Provided one-on-one, ticket-based support to resolve student queries. Evaluated each student's grasp of concepts and tailored explanations to ensure proper conceptual understanding while discouraging rote learning.}
+    \resumeItem{Impact}{Delivered course to 60,249 students, with 24,330 registrations and 12,432 successful certifications.}
+  \resumeItemListEnd
+  \resumeSubheading{Margazhi --- IITM}{Remote}{Super Coordinator --- Student Relations (HR Lead)}{Nov 2023 - Mar 2024}
+  \resumeItemListStart
+    \resumeItem{Served as HR Lead}{Led event coordination, supervised automation tool development, managed hospitality, and maintained multi-level data records, ensuring transparency and efficiency.}
+  \resumeItemListEnd
+  \resumeSubheading{Paradox --- IITM}{On-site}{Coordinator --- Student Relations (HR Associate)}{Mar 2023 - Jun 2024}
+  \resumeItemListStart
+    \resumeItem{Served as HR Associate}{Leveraged event coordination and hospitality. Maintained multi-level data records and generated related reports.}
+  \resumeItemListEnd
+  \resumeSubheading{NTPC}{On-site}{Industrial Training}{Ref. No: 08/HR/EDC/1.22/ Reg. No. 2044}
+  \resumeItemListStart
+    \resumeItem{Power Plant Engineering}{Rigorously studied various Power Generation processes - from plant establishment to power generation.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------HACKATHONS---------------------------------------------------------
+\section{Hackathons}
+\resumeSubHeadingListStart
+  \resumeSubheading{Resolve-It 2.0 --- Self-Improving GenAI Andon Cord}{\href{https://hack.amazon.com/\#lmaqgenai2026/ideas/138436}{LMAQ GenAI Hackathon 2026}}{Conversational RAG assistant with live case context and human-in-the-loop ticketing}{2026}
+  \resumeItemListStart
+    \resumeItem{Live Conversational Bot}{Enhanced Resolve-It into a chatbot embedded directly in GeoStudio that loads live case context, letting auditors converse for instant, SOP-grounded guidance --- making the system faster and more robust than the one-click predecessor.}
+    \resumeItem{Grounded RAG + Guardrails}{Answers are generated only from retrieved program SOPs, anecdotes, and manager-approved resolutions, with three layers of reliability --- source grounding, contextual grounding checks, and confidence thresholds that route low-certainty responses to manager review.}
+    \resumeItem{Human-in-the-Loop Ticketing}{A ``Disagree'' button raises a ticket the moment the AI's answer is unsatisfactory or beyond scope; manager-resolved tickets are re-ingested into the Knowledge Base with elevated retrieval priority, creating a continuous self-improving loop.}
+    \resumeItem{Impact}{Designed to support 300+ auditors across 3 sites served by only 14 SPOCs, recovering \textasciitilde{}50\% of SPOC bandwidth (\textasciitilde{}7 FTEs / \textasciitilde{}14,560 hours annually) and shifting error detection from downstream QC to the point of decision.}
+    \resumeItem{Submission}{Prototype submitted for review with the Data Governance team. \href{https://hack.amazon.com/\#lmaqgenai2026/ideas/138436}{View hackathon idea}.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION----------------------------------------------------------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading{Indian Institute of Technology, Madras}{Chennai, India}{Bachelor of Science (BS) in Data Science and Applications}{Pursuing}
+  \resumeItemListStart
+    \item[] \textit{\textbf{Relevant coursework:} Machine Learning, Statistics, Probability, Linear Algebra, Database Management Systems, SQL, Python.}
+  \resumeItemListEnd
+  \resumeSubheading{Sam Higginbottom University of Agriculture, Technology and Sciences (SHUATS)}{Prayagraj, India}{Bachelor of Technology - Mechanical Engineering; CGPA: 8.88}{Sep 2016}
+  \resumeItemListStart
+    \item[] \textit{\textbf{Relevant coursework:} Programming in C, Numerical Analysis, Robotics, Computer Numerical Control, Computer Aided Design, Machine Design.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS & AWARDS--------------------------------------------
+\section{Certifications and Awards}
+\resumeSubHeadingListStart
+  \resumeSubItem{Certifications}{Six Sigma Green Belt; Lean Six Sigma White Belt; Agentic AI: Applications from Concept to Code | Coding with Agents | Essential Concepts for Builders; AI Fundamentals; Software Architecture: Foundations; Kiro at Amazon; Business Analyst: Support Assessment (passed); Mathematical Fundamentals for Machine Learning; AutoGluon: Automate ML tasks; Jupyter Notebooks. (Verifiable on my \href{https://www.linkedin.com/in/007cn/}{LinkedIn}.)}
+  \resumeSubItem{Outliers 2.0 Winner --- Case Study Competition}{IIT Madras --- Developed strategic recommendations for Buy Now-Pay Later fintech platforms to ensure regulatory compliance amid RBI restrictions. Sep 2022.}
+  \resumeSubItem{Blendspace Certificate}{Sahityika: IIT Madras BS Literary Society --- Appreciation for excellent penmanship, creativity, and powerful elocution. Feb 2023.}
+  \resumeSubItem{Speakers Arena Panelist}{Aurora 2021, IIT Madras --- Debate Competition panelist. Dec 2021.}
+\resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-------------------------------------------------------
+\section{Publications}
+\resumeSubHeadingListStart
+  \resumeSubItem{Design of Photovoltaic System for School Library: A Case Study}{\textit{IJARET, Vol. 7, Issue 5, 2016, pp. 07--17. Designed a stand-alone solar photovoltaic system for the SSET library at SHIATS; annual consumption of 7,127 units can be halved with energy-efficient appliances, with the system paying back in 9 years and yielding 16 years of free electricity over its 25-year life.} \href{https://iaeme.com/Home/article_id/IJARET_07_05_002}{View Publication}.}
+\resumeSubHeadingListEnd
+
+%-----------VOLUNTEER & HOBBIES------------------------------------------------
+\section{Volunteer Experience and Hobbies}
+\resumeSubHeadingListStart
+  \resumeSubheading{Amazon Global Month of Volunteering}{Bengaluru, India}{Collaborated with 100+ volunteers to assemble 220 hygiene kits for vulnerable women.}{2025}
+  \resumeSubheading{Amazon Education is Key}{Bengaluru, India}{Volunteered during Education is Key Campaign.}{2025}
+\resumeSubHeadingListEnd
+\vspace{4pt}
+\noindent\textbf{Hobbies:} Writing, Public Speaking, Reading about AI/ML advancements, Problem Solving, Open Source Exploration, Cricket
+
+\end{document}

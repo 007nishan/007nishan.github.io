@@ -1,0 +1,58 @@
+{#- Base layout for every page. Rendered by build/build_site.py. -#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} · {{ basics.name }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <meta name="author" content="{{ basics.name }}">
+  <link rel="canonical" href="{{ meta.canonical }}{{ '' if page_file == 'index.html' else page_file }}">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ page_title }} · {{ basics.name }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:image" content="{{ basics.image }}">
+  <meta property="og:url" content="{{ meta.canonical }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <!-- schema.org/Person structured data (JSON-LD) for search-engine discoverability -->
+  <script type="application/ld+json">
+  {{ jsonld | safe }}
+  </script>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="nav-top">
+    {%- for item in nav %}
+    <a href="{{ item.file }}"{% if item.file == page_file %} class="active"{% endif %}>{{ item.label }}</a>
+    {%- endfor %}
+  </nav>
+
+  {% block hero %}{% endblock %}
+
+  <!-- Social Links -->
+  <div class="social-links">
+    {%- for p in basics.profiles %}
+    <a href="{{ p.url }}" rel="me" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/{{ p.x_icon }}.svg" alt="{{ p.network }}"> {{ p.network }}
+    </a>
+    {%- endfor %}
+  </div>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ basics.name }} · Built from a single source of truth (<code>data/resume.json</code>) · Last updated {{ meta.lastModified }}</p>
+    <p><a href="{{ profiles_by_network.GitHub.url }}/007nishan.github.io">View source &amp; build pipeline →</a></p>
+  </footer>
+
+</body>
+</html>

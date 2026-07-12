@@ -1,0 +1,37 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<h1 class="page-title">Pipeline Learnings</h1>
+<p class="page-intro">{{ pipeline.title }}</p>
+
+<div class="section">
+  <h2>How this site stays in sync</h2>
+  <p>{{ pipeline.intro }}</p>
+  <div class="callout"><strong>Principle:</strong> {{ pipeline.principle }}</div>
+  <div class="diagram">                    data/resume.json   &larr; SINGLE SOURCE OF TRUTH (edit only this)
+                          |
+   +----------+-----------+------------+-----------------+
+   v          v           v            v                 v
+7 HTML pages  CV .tex&rarr;PDF  CV .docx    linkedin.md      knowledge-graph/
+(the site)    (LaTeX/CI)  (python-docx) (paste blocks)  cv-graph.json
+
+  On every push &rarr; GitHub Actions rebuilds all spokes &amp; deploys the site.</div>
+</div>
+
+<div class="section">
+  <h2>The spokes</h2>
+  <div class="cards">
+    {%- for s in pipeline.spokes %}
+    <div class="card">
+      <h3>{{ s.name }}</h3>
+      <p>{{ s.detail }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <h2>Why it matters</h2>
+  <p>This portfolio is itself a demonstration of the work I do: turning a manual, error-prone, duplicated process (updating a résumé in five places) into an automated, single-source-of-truth system with continuous deployment — the same pattern behind the operational-quality systems I build at Amazon.</p>
+</div>
+{% endblock %}

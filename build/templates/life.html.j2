@@ -1,0 +1,56 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<h1 class="page-title">Life so far</h1>
+<p class="page-intro">A reverse-chronological timeline of experience and education.</p>
+
+<div class="section">
+  <h2>Experience</h2>
+  <div class="timeline">
+    {%- for job in work %}
+    <div class="timeline-item">
+      <div class="when">{{ job.x_dateDisplay or (fmt_date(job.startDate) ~ ' – ' ~ (fmt_date(job.endDate) if job.endDate else 'Present')) }}</div>
+      <h3>{{ job.position }}</h3>
+      <div class="where">{{ job.name }}{% if job.location %} · {{ job.location }}{% endif %}{% if job.x_employment %} · {{ job.x_employment }}{% endif %}</div>
+      {%- if job.highlights %}
+      <ul>
+        {%- for hi in job.highlights %}
+        <li><strong>{{ hi.name }}:</strong> {{ hi.description }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <h2>Education</h2>
+  <div class="timeline">
+    {%- for ed in education %}
+    <div class="timeline-item">
+      <div class="when">{{ ed.x_dateDisplay or fmt_date(ed.endDate) }}</div>
+      <h3>{{ ed.studyType }} — {{ ed.area }}</h3>
+      <div class="where">{{ ed.institution }}{% if ed.location %} · {{ ed.location }}{% endif %}{% if ed.score %} · {{ ed.score }}{% endif %}</div>
+      {%- if ed.courses %}
+      <ul><li><strong>Relevant coursework:</strong> {{ ed.courses | join(', ') }}.</li></ul>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <h2>Volunteering</h2>
+  <div class="timeline">
+    {%- for v in volunteer %}
+    <div class="timeline-item">
+      <div class="when">{{ v.x_dateDisplay }}</div>
+      <h3>{{ v.organization }}</h3>
+      <div class="where">{{ v.location }}</div>
+      <ul><li>{{ v.summary }}</li></ul>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+{% endblock %}

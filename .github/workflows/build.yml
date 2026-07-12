@@ -1,0 +1,61 @@
+name: Build portfolio from single source of truth
+
+# Trigger ONLY on source changes. The job writes to OUTPUT paths
+# (root *.html, cv/*.pdf, cv/*.docx, knowledge-graph/*, linkedin.md) which are
+# NOT in this list — so the bot's own commit never re-triggers the workflow.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "build/**"
+      - "assets/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch: {}   # allow manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write   # needed to commit regenerated artifacts back
+
+concurrency:
+  group: ssot-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: pip install jinja2 python-docx
+
+      - name: Build all surfaces (site, CV .tex/.docx, KG, LinkedIn blocks)
+        run: python build/build.py
+
+      - name: Compile CV PDF (LaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Nishanur_Rahman_CV.tex
+          working_directory: cv
+          latexmk_use_xelatex: false
+
+      - name: Publish PDF to site root (downloadable at /Nishanur_Rahman_CV.pdf)
+        run: cp cv/Nishanur_Rahman_CV.pdf ./Nishanur_Rahman_CV.pdf
+
+      - name: Commit regenerated artifacts
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: rebuild site + CV + KG from resume.json [skip ci]"
+            git push
+          fi

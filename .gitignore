@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# LaTeX build intermediates (the .pdf is kept; the aux files are not)
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.fls
+cv/*.fdb_latexmk
+cv/*.synctex.gz
+
+# OS
+.DS_Store
+Thumbs.db

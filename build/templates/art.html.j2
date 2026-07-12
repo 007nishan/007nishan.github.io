@@ -1,0 +1,36 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<h1 class="page-title">Art &amp; Recognition</h1>
+<p class="page-intro">Publications, awards, and the creative side — writing, speaking, and case-study wins.</p>
+
+<div class="section">
+  <h2>Publications</h2>
+  {%- for pub in publications %}
+  <div class="timeline-item" style="padding-left:0;">
+    <h3>{{ pub.name }}</h3>
+    <div class="where">{{ pub.publisher }} · {{ pub.releaseDate }}</div>
+    <p>{{ pub.summary }}</p>
+    {%- if pub.url %}<a class="btn secondary" href="{{ pub.url }}" target="_blank">View Publication →</a>{%- endif %}
+  </div>
+  {%- endfor %}
+</div>
+
+<div class="section">
+  <h2>Awards &amp; Recognition</h2>
+  <div class="cards">
+    {%- for a in awards %}
+    <div class="card">
+      <h3>{{ a.title }}</h3>
+      <p class="muted">{{ a.awarder }} · {{ fmt_date(a.date) }}</p>
+      <p>{{ a.summary }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="section">
+  <h2>Beyond work</h2>
+  <p>{% for group in interests %}{{ group.keywords | join(' · ') }}{% endfor %}</p>
+</div>
+{% endblock %}
