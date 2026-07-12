@@ -74,10 +74,23 @@ def build_jsonld(d):
     return json.dumps(person, ensure_ascii=False, indent=2)
 
 
+def _asset_version():
+    """Short content hash of style.css so the browser can never serve a stale
+    stylesheet — the <link> href changes whenever the CSS changes."""
+    import hashlib
+    css = os.path.join(ROOT, "assets", "style.css")
+    try:
+        with open(css, "rb") as f:
+            return hashlib.sha1(f.read()).hexdigest()[:8]
+    except FileNotFoundError:
+        return "1"
+
+
 def main():
     d = load_data()
     b = d["basics"]
     profiles_by_network = {p["network"]: p for p in b["profiles"]}
+    asset_ver = _asset_version()
 
     env = Environment(
         loader=FileSystemLoader(TEMPLATES),
@@ -120,6 +133,7 @@ def main():
         page_file=page_file,
         page_title="CV",
         page_description=b["summary"],
+        asset_ver=asset_ver,
         basics=b,
         meta=d["meta"],
         profiles_by_network=profiles_by_network,
